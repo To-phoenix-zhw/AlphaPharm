@@ -40,7 +40,6 @@ To train and analyze the AlphaPharm model, we constructed a large-scale dataset 
 
 
 
-
 ## <a name="training"></a>Training
 
 Researchers could train their own AlphaPharm from scratch with the following bash order.
