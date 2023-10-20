@@ -35,7 +35,7 @@ conda activate AlphaPharm
 
 ## <a name="datasets"></a>Datasets
 
-To train and analyze the AlphaPharm model, we constructed a large-scale dataset from MoleculeNet and ChEMBL. The preprocessed data is directly loaded by the model, and we uploaded it to the `datasets` folder. The raw data not been preprocessed are organized in the [raw_data](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link) Google Drive folder.
+To train and analyze the AlphaPharm model, we constructed a large-scale dataset from MoleculeNet and ChEMBL. The data are organized in the [data](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link) Google Drive folder. The raw data is in the `raw_data` folder. The data directly loaded by the model is stored in `datasets.zip`.
 
 
 
