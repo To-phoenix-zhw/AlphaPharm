@@ -24,7 +24,44 @@ Thanks to the above design, AlphaPharm significantly outperforms all the current
 
 ## <a name="installation"></a>Installation
 
-This source code is implemented with `Python 3.7` on`Ubuntu 20.04`. Researchers could install conda environment via conda yaml file.
+### Dependency
+
+The code has been tested in the following environment:
+
+| Package  | Version  |
+| -------- | -------- |
+| Python   | 3.8      |
+| PyTorch  | 1.8.0    |
+| CUDA     | 11.1     |
+| RDKit    | 2022.9.1 |
+| DeepChem | 2.7.1    |
+| XGBoost  | 2.0.0    |
+
+### Install via Conda and Pip
+
+```bash
+conda create -n AlphaPharm python=3.8
+conda activate AlphaPharm
+
+conda install cudatoolkit=11.1 cudnn
+pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+conda install -c rdkit rdkit
+pip install deepchem==2.7.1 
+pip install numpy==1.21.6 
+pip install openpyxl==3.1.2 
+pip install pandas==1.3.5 
+pip install scikit-learn==1.0.2
+conda install -c conda-forge py-xgboost-gpu
+```
+
+The code should work with Python >= 3.7. Researchers could change the package version according to your need.
+
+
+
+### (Alternatively) Install via conda yaml file
+
+This source code is implemented with `Python 3.7` on`Ubuntu 20.04`. Researchers could install the environment via conda yaml file.
 
 ```bash
 conda env create -f environment.yaml
@@ -42,6 +79,8 @@ To train and analyze the AlphaPharm model, we constructed a large-scale dataset 
 
 ## <a name="training"></a>Training
 
+### Training from scratch
+
 Researchers could train their own AlphaPharm from scratch with the following bash order.
 
 ```bash
@@ -54,11 +93,15 @@ For example:
 CUDA_VISIBLE_DEVICES=6 nohup python -u run.py --mode train --save_path run_train > run_train.log 2>&1 &
 ```
 
+### Trained model checkpoint
 
+We uploaded the model to the `checkpoints` folder.
 
 
 
 ## <a name="testing"></a>Testing
+
+### Testing on the dataset
 
 Researchers could test the model on the test dataset.
 
@@ -74,7 +117,7 @@ mkdir run_test
 CUDA_VISIBLE_DEVICES=6 nohup python -u run.py --mode test --searchtimes 1 --test_times 1 --save_path run_train --test_path almodel_85000.pt --begin 0 --end 1 > run_test/AlphaPharm_0_1.log 2>&1 &
 ```
 
-
+### Testing on customized datasets
 
 To apply AlphaPharm to `customized research`, e.g. to expedite the development of a certain drug, researchers only need to accomplish the two steps.
 
@@ -103,5 +146,3 @@ CUDA_VISIBLE_DEVICES=6 nohup python -u run.py --mode custom --searchtimes 1 --cu
 ## <a name="contact"></a>Contact
 
 If you encounter any problems during the setup of environment or the execution of AlphaPharm, do not hesitate to contact [liuxianggen@scu.edu.cn](mailto:liuxianggen@scu.edu.cn) or [hanwenzhang@stu.scu.edu.cn](mailto:hanwenzhang@stu.scu.edu.cn). You could also create an issue under the repository: https://github.com/To-phoenix-zhw/AlphaPharm.
-
-Cheers!
