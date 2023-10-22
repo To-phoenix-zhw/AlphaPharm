@@ -1,0 +1,358 @@
+ChEMBL ID,Name,UniProt Accessions,Type,Organism,Compounds,Activities,Tax ID,Species Group Flag
+CHEMBL4502,Cytidine deaminase,P32320,SINGLE PROTEIN,Homo sapiens,59,97,9606,FALSE
+CHEMBL4295630,ADP-ribose glycohydrolase MACROD2,A1Z1Q3,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL3632452,Mucosa-associated lymphoid tissue lymphoma translocation protein 1,Q9UDY8,SINGLE PROTEIN,Homo sapiens,365,622,9606,FALSE
+CHEMBL4105788,Inosine triphosphate pyrophosphatase,Q9BY32,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL2519,Neutral alpha-glucosidase AB,Q14697,SINGLE PROTEIN,Homo sapiens,28,90,9606,FALSE
+CHEMBL2311232,Endoribonuclease Dicer,Q9UPY3,SINGLE PROTEIN,Homo sapiens,10,19,9606,FALSE
+CHEMBL4523508,Ubiquitin carboxyl-terminal hydrolase 15,Q9Y4E8,SINGLE PROTEIN,Homo sapiens,4,4,9606,FALSE
+CHEMBL4630838,OTU domain-containing protein 7B,Q6GQQ9,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4630833,Ubiquitin thioesterase OTU1,Q5VVQ6,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4106183,Glutaminase 1/2,O94925|Q9UI32,PROTEIN FAMILY,Homo sapiens,3,5,9606,FALSE
+CHEMBL4630825,Josephin-1,Q15040,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL1807,Sodium/potassium-transporting ATPase alpha-1 chain,P05023,SINGLE PROTEIN,Homo sapiens,7,7,9606,FALSE
+CHEMBL4667,Group III secretory phopholipase A2,Q9NZ20,SINGLE PROTEIN,Homo sapiens,22,31,9606,FALSE
+CHEMBL2095186,Sodium/potassium-transporting ATPase,P05023|P14415|P05026|P50993|P54709|P13637|Q13733|P54710,PROTEIN COMPLEX GROUP,Homo sapiens,353,381,9606,FALSE
+CHEMBL4342,Group X secretory phospholipase A2,O15496,SINGLE PROTEIN,Homo sapiens,160,213,9606,FALSE
+CHEMBL2520,Neutral alpha-glucosidase C,Q8TET4,SINGLE PROTEIN,Homo sapiens,4,4,9606,FALSE
+CHEMBL3833502,Alpha glucosidase,O43451|P10253|P14410|Q2M2H8,PROTEIN FAMILY,Homo sapiens,623,737,9606,FALSE
+CHEMBL3831182,Retinoid isomerohydrolase,Q16518,SINGLE PROTEIN,Homo sapiens,,,9606,FALSE
+CHEMBL5172,Endo-beta-N-acetylglucosaminidase,Q8NFI3,SINGLE PROTEIN,Homo sapiens,51,63,9606,FALSE
+CHEMBL4647,Peptide deformylase mitochondrial,Q9HBH1,SINGLE PROTEIN,Homo sapiens,140,168,9606,FALSE
+CHEMBL2478,Salivary alpha-amylase,P0DUB6,SINGLE PROTEIN,Homo sapiens,62,100,9606,FALSE
+CHEMBL1293320,Protein phosphatase methylesterase 1,Q9Y570,SINGLE PROTEIN,Homo sapiens,32,52,9606,FALSE
+CHEMBL4802012,Sentrin-specific protease 5,Q96HI0,SINGLE PROTEIN,Homo sapiens,53,53,9606,FALSE
+CHEMBL1909487,Protein-arginine deiminase type-2,Q9Y2J8,SINGLE PROTEIN,Homo sapiens,79,138,9606,FALSE
+CHEMBL4105848,STAM-binding protein,O95630,SINGLE PROTEIN,Homo sapiens,28,28,9606,FALSE
+CHEMBL3883318,Transforming protein RhoA/Rho-related GTP-binding protein RhoC,P61586|P08134,PROTEIN FAMILY,Homo sapiens,35,140,9606,FALSE
+CHEMBL4630865,Ubiquitin carboxyl-terminal hydrolase 16,Q9Y5T5,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL3714531,Palmitoleoyl-protein carboxylesterase NOTUM,Q6P988,SINGLE PROTEIN,Homo sapiens,382,486,9606,FALSE
+CHEMBL4191,Monoglyceride lipase,Q99685,SINGLE PROTEIN,Homo sapiens,1301,1836,9606,FALSE
+CHEMBL4106136,DNA-PK/Ku70/Ku85,P78527|P12956|P13010,PROTEIN COMPLEX,Homo sapiens,23,23,9606,FALSE
+CHEMBL4184,Lysosomal acid lipase/cholesteryl ester hydrolase,P38571,SINGLE PROTEIN,Homo sapiens,32,63,9606,FALSE
+CHEMBL5338,Ectonucleoside triphosphate diphosphohydrolase 8,Q5MY95,SINGLE PROTEIN,Homo sapiens,74,96,9606,FALSE
+CHEMBL4426,Phospholipase A2 group 1B,P04054,SINGLE PROTEIN,Homo sapiens,599,700,9606,FALSE
+CHEMBL4295689,Diphosphoinositol polyphosphate phosphohydrolase 1,O95989,SINGLE PROTEIN,Homo sapiens,5,15,9606,FALSE
+CHEMBL3901,Sarcoplasmic/endoplasmic reticulum calcium ATPase 2,P16615,SINGLE PROTEIN,Homo sapiens,45,53,9606,FALSE
+CHEMBL4523642,Rho GEF 11/Transforming protein RhoA,P61586|O15085,PROTEIN COMPLEX,Homo sapiens,1,1,9606,FALSE
+CHEMBL4739862,Interferon-induced helicase C domain-containing protein 1,Q9BYX4,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL3590,Hormone sensitive lipase,Q05469,SINGLE PROTEIN,Homo sapiens,365,502,9606,FALSE
+CHEMBL3865,Beta-glucosidase cytosolic,Q9H227,SINGLE PROTEIN,Homo sapiens,57,61,9606,FALSE
+CHEMBL2189127,Monoacylglycerol lipase ABHD6,Q9BV23,SINGLE PROTEIN,Homo sapiens,241,318,9606,FALSE
+CHEMBL4523650,Proto-oncogene DBL/Transforming protein RhoA,P61586|P10911,PROTEIN COMPLEX,Homo sapiens,1,1,9606,FALSE
+CHEMBL2608,Lysosomal alpha-glucosidase,P10253,SINGLE PROTEIN,Homo sapiens,22301,35628,9606,FALSE
+CHEMBL3351194,Alkaline ceramidase 1,Q8TDN7,SINGLE PROTEIN,Homo sapiens,2,5,9606,FALSE
+CHEMBL3136,Sarcoplasmic/endoplasmic reticulum calcium ATPase 1,O14983,SINGLE PROTEIN,Homo sapiens,45,55,9606,FALSE
+CHEMBL2311229,Vacuolar protein sorting-associated protein 4B,O75351,SINGLE PROTEIN,Homo sapiens,4,5,9606,FALSE
+CHEMBL2331051,Palmitoyl-protein thioesterase 1,P50897,SINGLE PROTEIN,Homo sapiens,5,6,9606,FALSE
+CHEMBL3714412,Toll-like receptor 1,Q15399,SINGLE PROTEIN,Homo sapiens,5,5,9606,FALSE
+CHEMBL6122,Group XIIA secretory phospholipase A2,Q9BZM1,SINGLE PROTEIN,Homo sapiens,11,11,9606,FALSE
+CHEMBL3313834,Ectonucleoside triphosphate diphosphohydrolase 4,Q9Y227,SINGLE PROTEIN,Homo sapiens,9,9,9606,FALSE
+CHEMBL4834,Cytosolic phospholipase A2 gamma,Q9UP65,SINGLE PROTEIN,Homo sapiens,9,9,9606,FALSE
+CHEMBL2331067,Alkaline ceramidase 2,Q5QJU3,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL3038485,Beta-N-acetyl-D-hexosaminidase-A/B,P07686|P06865,PROTEIN FAMILY,Homo sapiens,50,71,9606,FALSE
+CHEMBL3638347,Protein-arginine deiminase type-6,Q6TGC4,SINGLE PROTEIN,Homo sapiens,6,6,9606,FALSE
+CHEMBL4105944,5' exonuclease Apollo,Q9H816,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL3217,"Vacuolar ATP synthase subunit B, kidney isoform",P15313,SINGLE PROTEIN,Homo sapiens,5,5,9606,FALSE
+CHEMBL4295722,Probable ATP-dependent RNA helicase DDX5,P17844,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4295730,Receptor-type tyrosine-protein phosphatase zeta,P23471,SINGLE PROTEIN,Homo sapiens,17,43,9606,FALSE
+CHEMBL4790,Vacuolar ATP synthase subunit S1,Q15904,SINGLE PROTEIN,Homo sapiens,33,39,9606,FALSE
+CHEMBL6052,Transforming protein RhoA,P61586,SINGLE PROTEIN,Homo sapiens,117,190,9606,FALSE
+CHEMBL5915,"Mannosyl-oligosaccharide 1,2-alpha-mannosidase IA",P33908,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL3351218,2'-deoxynucleoside 5'-phosphate N-hydrolase 1,O43598,SINGLE PROTEIN,Homo sapiens,25,25,9606,FALSE
+CHEMBL1795151,Bis(5'-adenosyl)-triphosphatase,P49789,SINGLE PROTEIN,Homo sapiens,45,95,9606,FALSE
+CHEMBL4523346,"Acylpyruvase FAHD1, mitochondrial",Q6P587,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL2728,Beta-glucuronidase,P08236,SINGLE PROTEIN,Homo sapiens,452,536,9606,FALSE
+CHEMBL4295975,Ubiquitin carboxyl-terminal hydrolase 25,Q9UHP3,SINGLE PROTEIN,Homo sapiens,251,257,9606,FALSE
+CHEMBL3713095,Galactocerebrosidase,P54803,SINGLE PROTEIN,Homo sapiens,1984,1984,9606,FALSE
+CHEMBL4680048,Acyl-protein thioesterase 1/2,O75608|O95372,PROTEIN FAMILY,Homo sapiens,2,2,9606,FALSE
+CHEMBL4630831,OTU domain-containing protein 3,Q5T2D3,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4295904,Diphosphoinositol polyphosphate phosphohydrolase 3-alpha,Q8NFP7,SINGLE PROTEIN,Homo sapiens,5,12,9606,FALSE
+CHEMBL2062350,"ATP synthase subunit beta, mitochondrial",P06576,SINGLE PROTEIN,Homo sapiens,3,5,9606,FALSE
+CHEMBL4630861,Ubiquitin carboxyl-terminal hydrolase 36,Q9P275,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL1255139,Ras-related protein Rap-1A,P62834,SINGLE PROTEIN,Homo sapiens,4,5,9606,FALSE
+CHEMBL4295664,Tolloid-like protein 1,O43897,SINGLE PROTEIN,Homo sapiens,397,400,9606,FALSE
+CHEMBL4523240,Ataxin-3,P54252,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL4630807,Mitofusin-2,O95140,SINGLE PROTEIN,Homo sapiens,5,7,9606,FALSE
+CHEMBL4630815,DNA replication licensing factor MCM5,P33992,SINGLE PROTEIN,Homo sapiens,1,3,9606,FALSE
+CHEMBL4804256,IL-33 receptor (ST2),Q9NPH3|Q01638,PROTEIN COMPLEX,Homo sapiens,,,9606,FALSE
+CHEMBL4523357,Ubiquitin carboxyl-terminal hydrolase 30,Q70CQ3,SINGLE PROTEIN,Homo sapiens,626,937,9606,FALSE
+CHEMBL2189134,Alpha/beta hydrolase domain-containing protein 11,Q8NFV4,SINGLE PROTEIN,Homo sapiens,4,4,9606,FALSE
+CHEMBL3831290,Sarcoplasmic/endoplasmic reticulum calcium ATPase,Q93084|O14983|P16615,PROTEIN FAMILY,Homo sapiens,,,9606,FALSE
+CHEMBL4665591,IL36 receptor,Q9HB29|Q9NPH3,PROTEIN COMPLEX,Homo sapiens,,,9606,FALSE
+CHEMBL4295823,Serum paraoxonase/arylesterase 2,Q15165,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL4523419,Serine protease HTRA1,Q92743,SINGLE PROTEIN,Homo sapiens,392,392,9606,FALSE
+CHEMBL4295852,5'-nucleotidase domain-containing protein 1,Q5TFE4,SINGLE PROTEIN,Homo sapiens,3,12,9606,FALSE
+CHEMBL4295756,V-type proton ATPase catalytic subunit A,P38606,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL3308924,Valacyclovir hydrolase,Q86WA6,SINGLE PROTEIN,Homo sapiens,4,16,9606,FALSE
+CHEMBL1786,Inositol-1(or 4)-monophosphatase 1,P29218,SINGLE PROTEIN,Homo sapiens,,,9606,FALSE
+CHEMBL3430874,Beta-ureidopropionase,Q9UBR1,SINGLE PROTEIN,Homo sapiens,,,9606,FALSE
+CHEMBL5877,Beta-hexosaminidase subunit beta,P07686,SINGLE PROTEIN,Homo sapiens,75,131,9606,FALSE
+CHEMBL4523987,Chymotrypsin,Q99895|P17538|P40313|Q6GPI1,PROTEIN FAMILY,Homo sapiens,106,120,9606,FALSE
+CHEMBL4295921,7-methylguanosine phosphate-specific 5'-nucleotidase,Q969T7,SINGLE PROTEIN,Homo sapiens,5,28,9606,FALSE
+CHEMBL4295824,Serum paraoxonase/lactonase 3,Q15166,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL4523294,Separin,Q14674,SINGLE PROTEIN,Homo sapiens,22,45,9606,FALSE
+CHEMBL2169728,Pancreatic lipase-related protein 2,P54317,SINGLE PROTEIN,Homo sapiens,4,17,9606,FALSE
+CHEMBL3616363,CCR4-NOT transcription complex subunit 6,Q9ULM6,SINGLE PROTEIN,Homo sapiens,16,16,9606,FALSE
+CHEMBL4523646,Rho GTPase-activating protein 35/Transforming protein RhoA,P61586|Q9NRY4,PROTEIN COMPLEX,Homo sapiens,1,1,9606,FALSE
+CHEMBL4523485,Klotho,Q9UEF7,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL3217376,Putative N-acetylglucosamine-6-phosphate deacetylase,Q9Y303,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL6163,Chromosome-associated kinesin KIF4A,O95239,SINGLE PROTEIN,Homo sapiens,53,56,9606,FALSE
+CHEMBL2007626,DNA dC->dU-editing enzyme APOBEC-3F,Q8IUX4,SINGLE PROTEIN,Homo sapiens,12449,14861,9606,FALSE
+CHEMBL4105971,Ras-related protein Rab-10,P61026,SINGLE PROTEIN,Homo sapiens,236,236,9606,FALSE
+CHEMBL4295646,Mannan-binding lectin serine protease 2,O00187,SINGLE PROTEIN,Homo sapiens,4,7,9606,FALSE
+CHEMBL4523193,General transcription and DNA repair factor IIH helicase subunit XPB,P19447,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL4295995,Tolloid-like protein 2,Q9Y6L7,SINGLE PROTEIN,Homo sapiens,393,396,9606,FALSE
+CHEMBL4281,Group IID secretory phospholipase A2,Q9UNK4,SINGLE PROTEIN,Homo sapiens,24,24,9606,FALSE
+CHEMBL4295991,ADP-ribose glycohydrolase OARD1,Q9Y530,SINGLE PROTEIN,Homo sapiens,1,2,9606,FALSE
+CHEMBL5893,Ribonuclease H1,O60930,SINGLE PROTEIN,Homo sapiens,14,14,9606,FALSE
+CHEMBL4105760,Probable ATP-dependent RNA helicase DDX17,Q92841,SINGLE PROTEIN,Homo sapiens,4,4,9606,FALSE
+CHEMBL4296245,Eyes absent homolog 3,Q99504,SINGLE PROTEIN,Homo sapiens,14,40,9606,FALSE
+CHEMBL4105852,Eukaryotic translation initiation factor 5B,O60841,SINGLE PROTEIN,Homo sapiens,170,170,9606,FALSE
+CHEMBL2193,Cerebroside-sulfatase,P15289,SINGLE PROTEIN,Homo sapiens,652,653,9606,FALSE
+CHEMBL4105965,Lys-63-specific deubiquitinase BRCC36,P46736,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4523305,"ATP-dependent Clp protease proteolytic subunit, mitochondrial",Q16740,SINGLE PROTEIN,Homo sapiens,12,18,9606,FALSE
+CHEMBL2308,"Endoplasmic reticulum mannosyl-oligosaccharide 1,2-alpha-mannosidase",Q9UKM7,SINGLE PROTEIN,Homo sapiens,30,30,9606,FALSE
+CHEMBL4105809,COP9 signalosome complex subunit 5,Q92905,SINGLE PROTEIN,Homo sapiens,35,35,9606,FALSE
+CHEMBL4295936,Cancer-related nucleoside-triphosphatase,Q9BSD7,SINGLE PROTEIN,Homo sapiens,1,2,9606,FALSE
+CHEMBL4105703,Ras-related protein Rab-6A,P20340,SINGLE PROTEIN,Homo sapiens,230,230,9606,FALSE
+CHEMBL4684,Mannosyl-oligosaccharide glucosidase,Q13724,SINGLE PROTEIN,Homo sapiens,8,8,9606,FALSE
+CHEMBL3308929,Double-strand break repair protein MRE11A,P49959,SINGLE PROTEIN,Homo sapiens,2,8,9606,FALSE
+CHEMBL3903,Beta-mannosidase,O00462,SINGLE PROTEIN,Homo sapiens,56,62,9606,FALSE
+CHEMBL3638356,Membrane metallo-endopeptidase-like 1,Q495T6,SINGLE PROTEIN,Homo sapiens,44,65,9606,FALSE
+CHEMBL1812,Pancreatic lipase,P16233,SINGLE PROTEIN,Homo sapiens,129,197,9606,FALSE
+CHEMBL4105893,Ras-related protein Rab-2A,P61019,SINGLE PROTEIN,Homo sapiens,1,2,9606,FALSE
+CHEMBL4296113,PAK 1/CDC42,Q13153|P60953,PROTEIN COMPLEX,Homo sapiens,2,2,9606,FALSE
+CHEMBL3219,Cholesterol esterase,P19835,SINGLE PROTEIN,Homo sapiens,20,33,9606,FALSE
+CHEMBL4105775,Meprin A subunit alpha,Q16819,SINGLE PROTEIN,Homo sapiens,9,11,9606,FALSE
+CHEMBL4295934,ADP-ribose glycohydrolase MACROD1,Q9BQ69,SINGLE PROTEIN,Homo sapiens,16,22,9606,FALSE
+CHEMBL4523236,DNA replication ATP-dependent helicase/nuclease DNA2,P51530,SINGLE PROTEIN,Homo sapiens,38,97,9606,FALSE
+CHEMBL1741217,DNA dC->dU-editing enzyme APOBEC-3G,Q9HC16,SINGLE PROTEIN,Homo sapiens,9894,12481,9606,FALSE
+CHEMBL4523196,Tryptase beta-2,P20231,SINGLE PROTEIN,Homo sapiens,16,22,9606,FALSE
+CHEMBL4295967,Diphosphoinositol polyphosphate phosphohydrolase 2,Q9NZJ9,SINGLE PROTEIN,Homo sapiens,5,12,9606,FALSE
+CHEMBL3616362,Poly(A)-specific ribonuclease PARN,O95453,SINGLE PROTEIN,Homo sapiens,22,22,9606,FALSE
+CHEMBL5027,Flap endonuclease 1,P39748,SINGLE PROTEIN,Homo sapiens,11112,12055,9606,FALSE
+CHEMBL2079845,GTPase NRas,P01111,SINGLE PROTEIN,Homo sapiens,3,7,9606,FALSE
+CHEMBL2522,Beta-galactosidase,P16278,SINGLE PROTEIN,Homo sapiens,197,339,9606,FALSE
+CHEMBL4105783,Probable ATP-dependent RNA helicase DDX6,P26196,SINGLE PROTEIN,Homo sapiens,237,237,9606,FALSE
+CHEMBL4105909,ATP-dependent RNA helicase DHX29,Q7Z478,SINGLE PROTEIN,Homo sapiens,17,17,9606,FALSE
+CHEMBL4295957,Acyl-coenzyme A thioesterase 13,Q9NPJ3,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL3886123,Thyrotropin-releasing hormone-degrading ectoenzyme,Q9UKU6,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL5463,Acid ceramidase,Q13510,SINGLE PROTEIN,Homo sapiens,285,411,9606,FALSE
+CHEMBL5545,Sn1-specific diacylglycerol lipase alpha,Q9Y4D2,SINGLE PROTEIN,Homo sapiens,319,415,9606,FALSE
+CHEMBL2682,Epididymis-specific alpha-mannosidase,Q9Y2E5,SINGLE PROTEIN,Homo sapiens,14,14,9606,FALSE
+CHEMBL4523267,Dermcidin,P81605,SINGLE PROTEIN,Homo sapiens,4,7,9606,FALSE
+CHEMBL4523495,Cytosolic carboxypeptidase 1,Q9UPW5,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4523137,"Serine protease HTRA2, mitochondrial",O43464,SINGLE PROTEIN,Homo sapiens,4,17,9606,FALSE
+CHEMBL3885522,Baculoviral IAP repeat-containing protein 3/Mucosa-associated lymphoid tissue lymphoma translocation protein 1,Q13489|Q9UDY8,CHIMERIC PROTEIN,Homo sapiens,7,7,9606,FALSE
+CHEMBL4105704,Obg-like ATPase 1,Q9NTK5,SINGLE PROTEIN,Homo sapiens,188,188,9606,FALSE
+CHEMBL1932891,Acyl-protein thioesterase 2,O95372,SINGLE PROTEIN,Homo sapiens,12,25,9606,FALSE
+CHEMBL4105782,ATP-dependent RNA helicase DDX42,Q86XP3,SINGLE PROTEIN,Homo sapiens,198,198,9606,FALSE
+CHEMBL4323,Phospholipase A2 group V,P39877,SINGLE PROTEIN,Homo sapiens,216,232,9606,FALSE
+CHEMBL2261,Glyoxalase II,Q16775,SINGLE PROTEIN,Homo sapiens,5,7,9606,FALSE
+CHEMBL4523136,Synaptojanin-1,O43426,SINGLE PROTEIN,Homo sapiens,27,48,9606,FALSE
+CHEMBL4295987,"Acyl-coenzyme A thioesterase 9, mitochondrial",Q9Y305,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4296016,Nucleolar RNA helicase 2,Q9NR30,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4630848,AMSH-like protease,Q96FJ0,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL5641,"V-type proton ATPase subunit B, brain isoform",P21281,SINGLE PROTEIN,Homo sapiens,2,3,9606,FALSE
+CHEMBL1909486,Protein-arginine deiminase type-1,Q9ULC6,SINGLE PROTEIN,Homo sapiens,91,130,9606,FALSE
+CHEMBL4105814,ATP-dependent RNA helicase DHX30,Q7L2E3,SINGLE PROTEIN,Homo sapiens,170,170,9606,FALSE
+CHEMBL2933,Potassium-transporting ATPase alpha chain 2,P54707,SINGLE PROTEIN,Homo sapiens,82,83,9606,FALSE
+CHEMBL4523644,Serine/threonine-protein kinase N1/Transforming protein RhoA,Q16512|P61586,PROTEIN COMPLEX,Homo sapiens,1,1,9606,FALSE
+CHEMBL3817723,"3-hydroxyisobutyryl-CoA hydrolase, mitochondrial",Q6NVY1,SINGLE PROTEIN,Homo sapiens,5,11,9606,FALSE
+CHEMBL4523496,Exonuclease 1,Q9UQ84,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4105731,Serine/threonine-protein phosphatase 6 catalytic subunit,O00743,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL2074,Maltase-glucoamylase,O43451,SINGLE PROTEIN,Homo sapiens,322,380,9606,FALSE
+CHEMBL4105984,"ADP-ribose pyrophosphatase, mitochondrial",Q9BW91,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4295818,Bleomycin hydrolase,Q13867,SINGLE PROTEIN,Homo sapiens,7,29,9606,FALSE
+CHEMBL4523123,Chromodomain-helicase-DNA-binding protein 1,O14646,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4523649,Rho-associated protein kinase 2/Transforming protein RhoA,O75116|P61586,PROTEIN COMPLEX,Homo sapiens,1,1,9606,FALSE
+CHEMBL4630820,Ubiquitin carboxyl-terminal hydrolase 11,P51784,SINGLE PROTEIN,Homo sapiens,5,5,9606,FALSE
+CHEMBL1293294,Ras-related protein Rab-9A,P51151,SINGLE PROTEIN,Homo sapiens,21980,22488,9606,FALSE
+CHEMBL3087,Trehalase,O43280,SINGLE PROTEIN,Homo sapiens,5,5,9606,FALSE
+CHEMBL4105957,CCR4-NOT transcription complex subunit 6-like,Q96LI5,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL4523342,"2',5'-phosphodiesterase 12",Q6L8Q7,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL2045,Pancreatic alpha-amylase,P04746,SINGLE PROTEIN,Homo sapiens,69,74,9606,FALSE
+CHEMBL4105863,Bis(5'-nucleosyl)-tetraphosphatase [asymmetrical],P50583,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4630862,Ubiquitin carboxyl-terminal hydrolase 35,Q9P2H5,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL4523234,Granzyme M,P51124,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL4630855,Ataxin-3-like protein,Q9H3M9,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4630845,Josephin-2,Q8TAC2,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4523507,Deoxynucleoside triphosphate triphosphohydrolase SAMHD1,Q9Y3Z3,SINGLE PROTEIN,Homo sapiens,2,3,9606,FALSE
+CHEMBL4523126,Calpain-9,O14815,SINGLE PROTEIN,Homo sapiens,15,15,9606,FALSE
+CHEMBL4523426,Endonuclease 8-like 1,Q96FI4,SINGLE PROTEIN,Homo sapiens,20,41,9606,FALSE
+CHEMBL4523264,Endonuclease III-like protein 1,P78549,SINGLE PROTEIN,Homo sapiens,20,51,9606,FALSE
+CHEMBL4105742,Chromodomain-helicase-DNA-binding protein 4,Q14839,SINGLE PROTEIN,Homo sapiens,220,220,9606,FALSE
+CHEMBL2243,Anandamide amidohydrolase,O00519,SINGLE PROTEIN,Homo sapiens,2450,3378,9606,FALSE
+CHEMBL4056,Alpha-mannosidase 2A1,Q16706,SINGLE PROTEIN,Homo sapiens,30,30,9606,FALSE
+CHEMBL3277,Uracil-DNA glycosylase,P13051,SINGLE PROTEIN,Homo sapiens,27,29,9606,FALSE
+CHEMBL4523645,RhoGEF 1/Transforming protein RhoA,P61586|Q92888,PROTEIN COMPLEX,Homo sapiens,2,12,9606,FALSE
+CHEMBL3822353,Patatin-like phospholipase domain-containing protein 2,Q96AD5,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL2287,Phospholipase A2 group 1VD,Q86XP0,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4295883,Deaminated glutathione amidase,Q86X76,SINGLE PROTEIN,Homo sapiens,1,2,9606,FALSE
+CHEMBL2401,Sarcoplasmic/endoplasmic reticulum calcium ATPase 3,Q93084,SINGLE PROTEIN,Homo sapiens,5,6,9606,FALSE
+CHEMBL4523246,Neurotrypsin,P56730,SINGLE PROTEIN,Homo sapiens,142,142,9606,FALSE
+CHEMBL2189124,Arylsulfatase G,Q96EG1,SINGLE PROTEIN,Homo sapiens,1,2,9606,FALSE
+CHEMBL4630801,Ubiquitin carboxyl-terminal hydrolase 27,A6NNY8,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL3831242,Cytosolic phospholipase A2 epsilon,Q3MJ16,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4630842,OTU domain-containing protein 6A,Q7L8S5,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4105879,Meprin A subunit beta,Q16820,SINGLE PROTEIN,Homo sapiens,90,94,9606,FALSE
+CHEMBL6168,Protein BAT5,O95870,SINGLE PROTEIN,Homo sapiens,26,42,9606,FALSE
+CHEMBL4680043,Protein argonaute-2,Q9UKV8,SINGLE PROTEIN,Homo sapiens,4,16,9606,FALSE
+CHEMBL4295768,Mannan-binding lectin serine protease 1,P48740,SINGLE PROTEIN,Homo sapiens,3,5,9606,FALSE
+CHEMBL4105743,General transcription and DNA repair factor IIH helicase subunit XPD,P18074,SINGLE PROTEIN,Homo sapiens,243,243,9606,FALSE
+CHEMBL4523154,Carboxypeptidase D,O75976,SINGLE PROTEIN,Homo sapiens,11,11,9606,FALSE
+CHEMBL4802066,Biotinidase,P43251,SINGLE PROTEIN,Homo sapiens,26,27,9606,FALSE
+CHEMBL4523151,Ectonucleoside triphosphate diphosphohydrolase 5,O75356,SINGLE PROTEIN,Homo sapiens,162,478,9606,FALSE
+CHEMBL2536,Phospholipase D1,Q13393,SINGLE PROTEIN,Homo sapiens,329,469,9606,FALSE
+CHEMBL4523623,PDE6D/KRAS,O43924|P01116,PROTEIN-PROTEIN INTERACTION,Homo sapiens,7,21,9606,FALSE
+CHEMBL4523362,Aprataxin,Q7Z2E3,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL3879865,Staphylococcal nuclease domain-containing protein 1,Q7KZF4,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL4630843,Deubiquitinase OTUD6B,Q8N6M0,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4630847,Ubiquitin thioesterase OTUB2,Q96DC9,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL5581,Ras-related C3 botulinum toxin substrate 2,P15153,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4105827,Nucleotide triphosphate diphosphatase NUDT15,Q9NV35,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4739843,Pantetheinase,O95497,SINGLE PROTEIN,Homo sapiens,40,69,9606,FALSE
+CHEMBL4174,Sialidase 4,Q8WWR8,SINGLE PROTEIN,Homo sapiens,133,261,9606,FALSE
+CHEMBL3132,Alpha-galactosidase B,P17050,SINGLE PROTEIN,Homo sapiens,11,11,9606,FALSE
+CHEMBL2154,Group IIE secretory phospholipase A2,Q9NZK7,SINGLE PROTEIN,Homo sapiens,18,19,9606,FALSE
+CHEMBL3616361,CCR4-NOT transcription complex subunit 7,Q9UIV1,SINGLE PROTEIN,Homo sapiens,32,32,9606,FALSE
+CHEMBL2189135,"Acyl-coenzyme A thioesterase 2, mitochondrial",P49753,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL5049,Ectonucleoside triphosphate diphosphohydrolase 2,Q9Y5L3,SINGLE PROTEIN,Homo sapiens,85,116,9606,FALSE
+CHEMBL1796,Gastric lipase,P07098,SINGLE PROTEIN,Homo sapiens,2,3,9606,FALSE
+CHEMBL4523643,A-kinase anchor protein 13/Transforming protein RhoA,P61586|Q12802,PROTEIN COMPLEX,Homo sapiens,1,1,9606,FALSE
+CHEMBL4296011,DNA replication licensing factor MCM6,Q14566,SINGLE PROTEIN,Homo sapiens,3,11,9606,FALSE
+CHEMBL4523161,Lactotransferrin,P02788,SINGLE PROTEIN,Homo sapiens,26,52,9606,FALSE
+CHEMBL6088,Cell division control protein 42 homolog,P60953,SINGLE PROTEIN,Homo sapiens,62,101,9606,FALSE
+CHEMBL6094,Ras-related C3 botulinum toxin substrate 1,P63000,SINGLE PROTEIN,Homo sapiens,109,215,9606,FALSE
+CHEMBL4278,Group IIF secretory phospholipase A2,Q9BZM2,SINGLE PROTEIN,Homo sapiens,15,15,9606,FALSE
+CHEMBL5897,Ectonucleoside triphosphate diphosphohydrolase 3,O75355,SINGLE PROTEIN,Homo sapiens,85,108,9606,FALSE
+CHEMBL2465,Dihydropyrimidinase,Q14117,SINGLE PROTEIN,Homo sapiens,,,9606,FALSE
+CHEMBL2189132,Abhydrolase domain-containing protein FAM108B1,Q5VST6,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL1075097,Arginase-1,P05089,SINGLE PROTEIN,Homo sapiens,231,297,9606,FALSE
+CHEMBL2146302,"Glutaminase kidney isoform, mitochondrial",O94925,SINGLE PROTEIN,Homo sapiens,16511,16872,9606,FALSE
+CHEMBL3301397,Ras-related C3 botulinum toxin substrate 1/T-lymphoma invasion and metastasis-inducing protein 1,P63000|Q13009,PROTEIN-PROTEIN INTERACTION,Homo sapiens,7,10,9606,FALSE
+CHEMBL1949488,Scavenger mRNA-decapping enzyme DcpS,Q96C86,SINGLE PROTEIN,Homo sapiens,79,113,9606,FALSE
+CHEMBL4802013,"Serine/threonine-protein phosphatase PGAM5, mitochondrial",Q96HS1,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL4523428,Ubiquitin thioesterase OTUB1,Q96FW1,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL4295945,5'-nucleotidase domain-containing protein 2,Q9H857,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL1795150,Adenosine deaminase-like protein,Q6DHV7,SINGLE PROTEIN,Homo sapiens,37,61,9606,FALSE
+CHEMBL4295958,"Fructose-2,6-bisphosphatase TIGAR",Q9NQ88,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL3167,Serum paraoxonase/arylesterase 1,P27169,SINGLE PROTEIN,Homo sapiens,68,95,9606,FALSE
+CHEMBL4105749,Receptor-type tyrosine-protein phosphatase O,Q16827,SINGLE PROTEIN,Homo sapiens,12,14,9606,FALSE
+CHEMBL4105943,Uridine diphosphate glucose pyrophosphatase,O95848,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4105972,U5 small nuclear ribonucleoprotein 200 kDa helicase,O75643,SINGLE PROTEIN,Homo sapiens,292,313,9606,FALSE
+CHEMBL4105730,"Glutaminase liver isoform, mitochondrial",Q9UI32,SINGLE PROTEIN,Homo sapiens,41,46,9606,FALSE
+CHEMBL1795148,"Arginase-2, mitochondrial",P78540,SINGLE PROTEIN,Homo sapiens,9124,9267,9606,FALSE
+CHEMBL4100,Phospholipase C-gamma-2,P16885,SINGLE PROTEIN,Homo sapiens,41,78,9606,FALSE
+CHEMBL4105889,Exosome RNA helicase MTR4,P42285,SINGLE PROTEIN,Homo sapiens,243,243,9606,FALSE
+CHEMBL2073669,Multidrug resistance associated protein,Q96QA9,SINGLE PROTEIN,Homo sapiens,42,78,9606,FALSE
+CHEMBL2189121,GTPase KRas,P01116,SINGLE PROTEIN,Homo sapiens,554,1427,9606,FALSE
+CHEMBL4105815,Glycine--tRNA ligase,P41250,SINGLE PROTEIN,Homo sapiens,243,243,9606,FALSE
+CHEMBL4295701,Complement C2,P06681,SINGLE PROTEIN,Homo sapiens,1,4,9606,FALSE
+CHEMBL4523647,Rho GEF 12/Transforming protein RhoA,P61586|Q9NZN5,PROTEIN COMPLEX,Homo sapiens,5,5,9606,FALSE
+CHEMBL4630832,OTU domain-containing protein 1,Q5VV17,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL3879836,Ras-related protein Rab-7L1,O14966,SINGLE PROTEIN,Homo sapiens,4,5,9606,FALSE
+CHEMBL4630841,Ubiquitin carboxyl-terminal hydrolase 45,Q70EL2,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL4106177,Rho GTPase Rac1/CDC42,P60953|P63000,PROTEIN FAMILY,Homo sapiens,2,2,9606,FALSE
+CHEMBL4105702,Ras-related protein Rab-27A,P51159,SINGLE PROTEIN,Homo sapiens,222,222,9606,FALSE
+CHEMBL4879516,"Presenilins-associated rhomboid-like protein, mitochondrial",Q9H300,SINGLE PROTEIN,Homo sapiens,36,56,9606,FALSE
+CHEMBL3509584,Arylacetamide deacetylase,P22760,SINGLE PROTEIN,Homo sapiens,9,48,9606,FALSE
+CHEMBL1909488,Protein-arginine deiminase type-3,Q9ULW8,SINGLE PROTEIN,Homo sapiens,68,118,9606,FALSE
+CHEMBL4105795,ATP-dependent RNA helicase DDX39A,O00148,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL2095233,Cholinesterases; ACHE & BCHE,P06276|P22303,SELECTIVITY GROUP,Homo sapiens,1025,1181,9606,FALSE
+CHEMBL4630849,Deubiquitinating protein VCPIP1,Q96JH7,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL3474,Phospholipase A2 group IIA,P14555,SINGLE PROTEIN,Homo sapiens,600,1045,9606,FALSE
+CHEMBL4523281,Ubiquitin carboxyl-terminal hydrolase 17-like protein 24,Q0WX57,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4879436,"Lon protease homolog, mitochondrial",P36776,SINGLE PROTEIN,Homo sapiens,24,24,9606,FALSE
+CHEMBL4879501,5'-3' exonuclease PLD4,Q96BZ4,SINGLE PROTEIN,Homo sapiens,7,21,9606,FALSE
+CHEMBL3769292,dCTP pyrophosphatase 1,Q9H773,SINGLE PROTEIN,Homo sapiens,476,562,9606,FALSE
+CHEMBL1681631,Acyl-protein thioesterase 1,O75608,SINGLE PROTEIN,Homo sapiens,13,16,9606,FALSE
+CHEMBL5080,Endothelial lipase,Q9Y5X9,SINGLE PROTEIN,Homo sapiens,814,1020,9606,FALSE
+CHEMBL3879856,Katanin p60 ATPase-containing subunit A1,O75449,SINGLE PROTEIN,Homo sapiens,7,18,9606,FALSE
+CHEMBL4888458,CDC42/Intersectin-1,P60953|Q15811,PROTEIN-PROTEIN INTERACTION,Homo sapiens,1,1,9606,FALSE
+CHEMBL2399,N-acetylgalactosamine-4-sulfatase,P15848,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4295661,Pre-mRNA-splicing factor ATP-dependent RNA helicase DHX15,O43143,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL3921,Heparanase,Q9Y251,SINGLE PROTEIN,Homo sapiens,352,552,9606,FALSE
+CHEMBL4523648,Protein diaphanous homolog 1/Transforming protein RhoA,P61586|O60610,PROTEIN COMPLEX,Homo sapiens,1,1,9606,FALSE
+CHEMBL4802020,AFG3-like protein 2,Q9Y4W6,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL1649048,Deoxyribonuclease gamma,Q13609,SINGLE PROTEIN,Homo sapiens,3,11,9606,FALSE
+CHEMBL3129,Guanine deaminase,Q9Y2T3,SINGLE PROTEIN,Homo sapiens,15,18,9606,FALSE
+CHEMBL4879446,Ras-related protein R-Ras2,P62070,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4524005,Secretory phospholipase A2,Q5R387|Q9NZK7|P14555|Q9BZM2|Q9UNK4|P39877|O15496|P04054|Q9NZ20|Q9BZM1|Q9BX93,PROTEIN FAMILY,Homo sapiens,14,27,9606,FALSE
+CHEMBL4804253,IL18 Receptor,O95256|Q13478,PROTEIN COMPLEX,Homo sapiens,,,9606,FALSE
+CHEMBL3879851,Ras-related protein Ral-B,P11234,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL2021754,Neutral ceramidase,Q9NR71,SINGLE PROTEIN,Homo sapiens,51,95,9606,FALSE
+CHEMBL3879826,Ras-related protein Rab-1A,P62820,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL5580,Ectonucleotide pyrophosphatase/phosphodiesterase family member 3,O14638,SINGLE PROTEIN,Homo sapiens,158,195,9606,FALSE
+CHEMBL2189130,S-formylglutathione hydrolase,P10768,SINGLE PROTEIN,Homo sapiens,2,14,9606,FALSE
+CHEMBL3708265,"7,8-dihydro-8-oxoguanine triphosphatase",P36639,SINGLE PROTEIN,Homo sapiens,164,277,9606,FALSE
+CHEMBL4176,Alpha-L-fucosidase I,P04066,SINGLE PROTEIN,Homo sapiens,176,304,9606,FALSE
+CHEMBL1910,Adenosine deaminase,P00813,SINGLE PROTEIN,Homo sapiens,86,126,9606,FALSE
+CHEMBL3575,RNase L,Q05823,SINGLE PROTEIN,Homo sapiens,117,193,9606,FALSE
+CHEMBL4523156,Ubiquitin carboxyl-terminal hydrolase 19,O94966,SINGLE PROTEIN,Homo sapiens,661,665,9606,FALSE
+CHEMBL1075121,Putative hydrolase RBBP9,O75884,SINGLE PROTEIN,Homo sapiens,26,66,9606,FALSE
+CHEMBL4523487,DNA dC->dU-editing enzyme APOBEC-3B,Q9UH17,SINGLE PROTEIN,Homo sapiens,8,8,9606,FALSE
+CHEMBL4523328,Cytosolic carboxypeptidase 6,Q5VU57,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4523129,Synaptojanin-2,O15056,SINGLE PROTEIN,Homo sapiens,32,76,9606,FALSE
+CHEMBL2060,Lipoprotein lipase,P06858,SINGLE PROTEIN,Homo sapiens,70,100,9606,FALSE
+CHEMBL6087,Ras-related C3 botulinum toxin substrate 3,P60763,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL4105705,"Dynamin-like 120 kDa protein, mitochondrial",O60313,SINGLE PROTEIN,Homo sapiens,243,243,9606,FALSE
+CHEMBL6036,"N(G),N(G)-dimethylarginine dimethylaminohydrolase 1",O94760,SINGLE PROTEIN,Homo sapiens,78,231,9606,FALSE
+CHEMBL4523118,Dynamin-1-like protein,O00429,SINGLE PROTEIN,Homo sapiens,71,142,9606,FALSE
+CHEMBL3046,Sialidase 3,Q9UQ49,SINGLE PROTEIN,Homo sapiens,251,394,9606,FALSE
+CHEMBL4296042,Diphosphoinositol polyphosphate phosphohydrolase 3-beta,Q96G61,SINGLE PROTEIN,Homo sapiens,5,12,9606,FALSE
+CHEMBL3883316,DNA excision repair protein ERCC-1/DNA repair endonuclease XPF,P07992|Q92889,PROTEIN COMPLEX,Homo sapiens,97,129,9606,FALSE
+CHEMBL4349,N-acylsphingosine-amidohydrolase,Q02083,SINGLE PROTEIN,Homo sapiens,331,450,9606,FALSE
+CHEMBL3885643,Toll-like receptor 1/2,O60603|Q15399,PROTEIN COMPLEX,Homo sapiens,33,58,9606,FALSE
+CHEMBL4105912,Signal peptide peptidase-like 2B,Q8TCT7,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL3180,Carboxylesterase 2,O00748,SINGLE PROTEIN,Homo sapiens,370,583,9606,FALSE
+CHEMBL1628475,Fatty-acid amide hydrolase 2,Q6GMR7,SINGLE PROTEIN,Homo sapiens,6,6,9606,FALSE
+CHEMBL1250415,Beta-hexosaminidase subunit alpha,P06865,SINGLE PROTEIN,Homo sapiens,22,76,9606,FALSE
+CHEMBL4523350,NAD(+) hydrolase SARM1,Q6SZW1,SINGLE PROTEIN,Homo sapiens,47,87,9606,FALSE
+CHEMBL4630813,DNA replication licensing factor MCM3,P25205,SINGLE PROTEIN,Homo sapiens,1,3,9606,FALSE
+CHEMBL4105832,Eukaryotic initiation factor 4A-III,P38919,SINGLE PROTEIN,Homo sapiens,80,131,9606,FALSE
+CHEMBL4105952,Eukaryotic initiation factor 4A-II,Q14240,SINGLE PROTEIN,Homo sapiens,9,9,9606,FALSE
+CHEMBL4059,Lysosomal alpha-mannosidase,O00754,SINGLE PROTEIN,Homo sapiens,56,172,9606,FALSE
+CHEMBL2189133,Lysophospholipase-like protein 1,Q5VWZ2,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL2189136,Acyl-coenzyme A thioesterase 1,Q86TX2,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4295963,ADP-ribose glycohydrolase ARH3,Q9NX46,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL2052028,Eukaryotic initiation factor 4A-I,P60842,SINGLE PROTEIN,Homo sapiens,73,202,9606,FALSE
+CHEMBL3309116,Cell cycle checkpoint protein RAD1,O60671,SINGLE PROTEIN,Homo sapiens,4,6,9606,FALSE
+CHEMBL4524006,RAS,P01112|P01111|P01116,PROTEIN FAMILY,Homo sapiens,2,4,9606,FALSE
+CHEMBL4523470,Sphingomyelin phosphodiesterase 3,Q9NY59,SINGLE PROTEIN,Homo sapiens,109,112,9606,FALSE
+CHEMBL4630817,Ubiquitin carboxyl-terminal hydrolase 6,P35125,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL2062351,"ATP synthase subunit alpha, mitochondrial",P25705,SINGLE PROTEIN,Homo sapiens,3,5,9606,FALSE
+CHEMBL4523324,Mesoderm-specific transcript homolog protein,Q5EB52,SINGLE PROTEIN,Homo sapiens,3,25,9606,FALSE
+CHEMBL5100,Kynureninase,Q16719,SINGLE PROTEIN,Homo sapiens,14,42,9606,FALSE
+CHEMBL2524,Alpha-galactosidase A,P06280,SINGLE PROTEIN,Homo sapiens,4437,5444,9606,FALSE
+CHEMBL4630858,Ubiquitin carboxyl-terminal hydrolase CYLD,Q9NQC7,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL5108,Platelet-activating factor acetylhydrolase IB gamma subunit,Q15102,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL2726,Sialidase 1,Q99519,SINGLE PROTEIN,Homo sapiens,126,228,9606,FALSE
+CHEMBL3831244,HRAS-like suppressor 3,P53816,SINGLE PROTEIN,Homo sapiens,56,57,9606,FALSE
+CHEMBL3559,Steryl-sulfatase,P08842,SINGLE PROTEIN,Homo sapiens,827,1742,9606,FALSE
+CHEMBL2869,AMP deaminase 1,P23109,SINGLE PROTEIN,Homo sapiens,7,7,9606,FALSE
+CHEMBL4523407,Minor histocompatibility antigen H13,Q8TCT9,SINGLE PROTEIN,Homo sapiens,2,4,9606,FALSE
+CHEMBL4630816,DNA replication licensing factor MCM7,P33993,SINGLE PROTEIN,Homo sapiens,1,8,9606,FALSE
+CHEMBL4630839,N-acyl-phosphatidylethanolamine-hydrolyzing phospholipase D,Q6IQ20,SINGLE PROTEIN,Homo sapiens,114,115,9606,FALSE
+CHEMBL3200,Sialidase 2,Q9Y3R4,SINGLE PROTEIN,Homo sapiens,232,370,9606,FALSE
+CHEMBL3308910,DNA replication licensing factor MCM2,P49736,SINGLE PROTEIN,Homo sapiens,3,21,9606,FALSE
+CHEMBL4105784,Ras-related protein Rab-7a,P51149,SINGLE PROTEIN,Homo sapiens,29,127,9606,FALSE
+CHEMBL4105745,DNA replication licensing factor MCM4,P33991,SINGLE PROTEIN,Homo sapiens,235,237,9606,FALSE
+CHEMBL4105833,Signal peptide peptidase-like 2A,Q8TCT8,SINGLE PROTEIN,Homo sapiens,28,30,9606,FALSE
+CHEMBL3430900,Interferon-induced guanylate-binding protein 1/Serine/threonine-protein kinase pim-1,P11309|P32455,PROTEIN-PROTEIN INTERACTION,Homo sapiens,44,47,9606,FALSE
+CHEMBL4523429,Peptide-N(4)-(N-acetyl-beta-glucosaminyl)asparagine amidase,Q96IV0,SINGLE PROTEIN,Homo sapiens,12,35,9606,FALSE
+CHEMBL1741179,Probable DNA dC->dU-editing enzyme APOBEC-3A,P31941,SINGLE PROTEIN,Homo sapiens,839,890,9606,FALSE
+CHEMBL2095173,Potassium-transporting ATPase,P20648|P51164,PROTEIN COMPLEX,Homo sapiens,336,493,9606,FALSE
+CHEMBL2912,AMP deaminase 3,Q01432,SINGLE PROTEIN,Homo sapiens,47,49,9606,FALSE
+CHEMBL5878,Histidine triad nucleotide-binding protein 1,P49773,SINGLE PROTEIN,Homo sapiens,58,104,9606,FALSE
+CHEMBL3879855,Ras-related protein Ral-A,P11233,SINGLE PROTEIN,Homo sapiens,2,2,9606,FALSE
+CHEMBL2271,Alpha-L-fucosidase 2,Q9BTY2,SINGLE PROTEIN,Homo sapiens,3,3,9606,FALSE
+CHEMBL4136,Phospholipase A2 group 1VB,P0C869,SINGLE PROTEIN,Homo sapiens,50,71,9606,FALSE
+CHEMBL2734,Phospholipase D2,O14939,SINGLE PROTEIN,Homo sapiens,313,437,9606,FALSE
+CHEMBL4523459,Sialate O-acetylesterase,Q9HAT2,SINGLE PROTEIN,Homo sapiens,1,1,9606,FALSE
+CHEMBL4523218,N-acetylgalactosamine-6-sulfatase,P34059,SINGLE PROTEIN,Homo sapiens,3,25,9606,FALSE
+CHEMBL3514,LDL-associated phospholipase A2,Q13093,SINGLE PROTEIN,Homo sapiens,552,1336,9606,FALSE
+CHEMBL220,Acetylcholinesterase,P22303,SINGLE PROTEIN,Homo sapiens,8940,16157,9606,FALSE
+CHEMBL1914,Butyrylcholinesterase,P06276,SINGLE PROTEIN,Homo sapiens,4711,6451,9606,FALSE
+CHEMBL2664,Adenosylhomocysteinase,P23526,SINGLE PROTEIN,Homo sapiens,329,855,9606,FALSE
