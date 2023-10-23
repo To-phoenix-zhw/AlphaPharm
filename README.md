@@ -59,17 +59,6 @@ The code should work with Python >= 3.7. Researchers could change the package ve
 
 
 
-### (Alternatively) Install via conda yaml file
-
-This source code is implemented with `Python 3.7` on`Ubuntu 20.04`. Researchers could install the environment via conda yaml file.
-
-```bash
-conda env create -f environment.yaml
-conda activate AlphaPharm
-```
-
-
-
 ## <a name="datasets"></a>Datasets
 
 To train and analyze the AlphaPharm model, we constructed a large-scale dataset from MoleculeNet and ChEMBL. The data are organized in the [data](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link) Google Drive folder. The raw data is in the `raw_data` folder. The data directly loaded by the model is stored in `datasets.zip`.
@@ -90,7 +79,7 @@ python run.py --mode train --save_path [saved_model_path] > [train_log_file_name
 For example:
 
 ```bash
-CUDA_VISIBLE_DEVICES=6 nohup python -u run.py --mode train --save_path run_train > run_train.log 2>&1 &
+python -u run.py --mode train --save_path run_train > run_train.log
 ```
 
 ### Trained model checkpoint
@@ -107,38 +96,14 @@ Researchers could test the model on the test dataset.
 
 ```bash
 mkdir [test_log_folder]
-python -u run.py --mode test --searchtimes 1 --test_times 100 --save_path [saved_model_path] --test_path [saved_model_name] --begin [task_id] --end [task_id] > [test_log_file_name] 2>&1 &
+python -u run.py --mode test --searchtimes 1 --test_times 100 --save_path [saved_model_path] --test_path [saved_model_name] --begin [task_id] --end [task_id] > [test_log_file_name]
 ```
 
 For example:
 
 ```bash
 mkdir run_test
-CUDA_VISIBLE_DEVICES=6 nohup python -u run.py --mode test --searchtimes 1 --test_times 1 --save_path run_train --test_path almodel_85000.pt --begin 0 --end 1 > run_test/AlphaPharm_0_1.log 2>&1 &
-```
-
-### Testing on customized datasets
-
-To apply AlphaPharm to `customized research`, e.g. to expedite the development of a certain drug, researchers only need to accomplish the two steps.
-
-- Organize the data
-
-Please refered to the `customized_data.py` and revise the names of files.
-
-- Apply the model
-
-```bash
-mkdir [test_log_folder]
-python -u run.py --mode custom --searchtimes 1 --custom [customized_data_folder] --save_path [saved_model_path] --test_path [saved_model_name] > [test_log_file_name] 2>&1 &
-```
-
-
-
-For example:
-
-```bash
-mkdir run_custom
-CUDA_VISIBLE_DEVICES=6 nohup python -u run.py --mode custom --searchtimes 1 --custom ./Lidocaine/ --save_path run_train --test_path almodel_75000.pt > run_custom/AlphaPharm_lead_optimization.log 2>&1 &
+python -u run.py --mode test --searchtimes 1 --test_times 1 --save_path run_train --test_path almodel_85000.pt --begin 0 --end 1 > run_test/AlphaPharm_0_1.log
 ```
 
 
