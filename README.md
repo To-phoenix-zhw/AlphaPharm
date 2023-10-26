@@ -24,8 +24,23 @@ Specifically, AlphaPharm contains two main modules, the property predictor and t
 Thanks to the above design, AlphaPharm significantly outperforms all the current active learning and few-shot learning methods. It should be noted that AlphaPharm astoundingly singled out a drug candidate, AA-35, with the most potent analgesic activity, from a pool of 51 compounds in just six trials. These findings validate proof-of-concept and highlight the promise of AlphaPharm as a powerful AI-driven computational tool for drug discovery.
 <img src="./figure/Figure1.svg">
 
+
+
+
+
+
+
 ## <a name="obutton"></a>The testing of AlphaPharm
-As soon as you execute `bash run.sh`, the testing process will be started, performing the molecule identification process for certain properties with the trained AlphaPharm model. You will get the performance at the bottom of the log file (`results/output`) with the following formats: 
+First, you need simply accomplish two steps to loading the data.
+
+1. Download the dataset archive `data.zip` from [this link](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link).
+2. Extract the ZIP archive using the command: `unzip data.zip`.
+
+
+
+Then, you can test the AlphaPharm model. 
+
+As soon as you execute `bash run.sh`, the testing process will be started, performing the molecule identification process for certain properties with the trained AlphaPharm model. You will get the performance at the bottom of a log file with the following formats: 
 
 >********Statistic Performance********
 >
@@ -62,42 +77,41 @@ If you want to train your own AlphaPharm from scratch, just change `test` to `tr
 
 #### Dependency
 
-The code has been tested in the following environment:
+The code has been implemented in the following environment:
 
-| Package  | Version  |
-| -------- | -------- |
-| Python   | 3.7      |
-| PyTorch  | 1.8.0    |
-| CUDA     | 11.1     |
-| RDKit    | 2022.9.1 |
-| DeepChem | 2.7.1    |
-| XGBoost  | 2.0.0    |
+| Package        | Version  |
+| -------------- | -------- |
+| Python         | 3.7      |
+| PyTorch        | 1.8.0    |
+| CUDA           | 11.1     |
+| RDKit          | 2022.9.1 |
+| DeepChem       | 2.7.1    |
+| py-xgboost-gpu | 1.5.1    |
+
+The code should work with Python >= 3.7. You could change the package version according to your need.
+
+
 
 #### Install via Conda and Pip
 
-```bash
-conda create -n AlphaPharm python=3.8
+```shell
+conda create -n AlphaPharm python=3.7
 conda activate AlphaPharm
 
-conda install cudatoolkit=11.1 cudnn
 pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+conda install cudatoolkit=11.1 cudnn
 
-conda install -c rdkit rdkit
-pip install deepchem==2.7.1 
-pip install numpy==1.21.6 
-pip install openpyxl==3.1.2 
-pip install pandas==1.3.5 
-pip install scikit-learn==1.0.2
+pip install rdkit
+pip install deepchem
+pip install openpyxl
 conda install -c conda-forge py-xgboost-gpu
 ```
-
-The code should work with Python >= 3.7. Researchers could change the package version according to your need.
 
 
 
 ### <a name="datasets"></a>Datasets
 
-To train and analyze the AlphaPharm model, we constructed a large-scale dataset from MoleculeNet and ChEMBL. Due to the storage limitation in Github, the complete data are organized in the [data](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link) Google Drive folder. The raw data is in the `raw_data` folder and the data directly loaded by the model is stored in `datasets.zip`.
+To train and analyze the AlphaPharm model, we constructed a large-scale dataset from MoleculeNet and ChEMBL. Due to the storage limitation in Github, the complete data are organized in the [data](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link) Google Drive folder. The raw data is in the `raw_data` folder and the data directly loaded by the model is stored in `data.zip`.  
 
 
 
