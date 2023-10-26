@@ -2,13 +2,15 @@
 
 Official PyTorch implementation of paper "AlphaPharm: a reinforcement-active learning framework to streamline lead optimization in drug discovery". 
 
-[AlphaPharm](#AlphaPharm)
+[Contents](#AlphaPharm)
 
 - [Overview](#overview)
-- [The testing of AlphaPharm](#obutton)
-- [The training of AlphaPharm](#otraining)
+- [Installation guide](#installation)
+- [Get started with AlphaPharm](#example)
+  - [The testing of AlphaPharm](#obutton)
+  - [The training of AlphaPharm](#otraining)
+  
 - [More information](#more)
-  - [Installation](#installation)
   - [Datasets](#datasets)
   - [Training](#training)
   - [Testing](#testing)
@@ -26,54 +28,7 @@ Thanks to the above design, AlphaPharm significantly outperforms all the current
 
 
 
-
-
-
-
-## <a name="obutton"></a>The testing of AlphaPharm
-First, you need to simply accomplish two steps to loading the data.
-
-1. Download the dataset archive `data.zip` from [this link](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link).
-2. Extract the ZIP archive using the command: `unzip data.zip`.
-
-
-
-Then, you can test the AlphaPharm model. 
-
-As soon as you execute `bash run.sh`, the testing process will be started, performing the molecule identification process for certain properties with the model. You will get the performance at the bottom of a log file with the following formats: 
-
->********Statistic Performance********
->
->Average success rate: [a percentage]
->
->Average search steps: [an integer]
->
->time cost [a floating point number] s
-
-If you want to test AlphaPharm on the other properties, you can edit the `test.sh` file by revising the value of the `--task_id` argument. (Domain of this argument: [0, 1, 2])
-
-
-
-## <a name="otraining"></a>The training of AlphaPharm
-
-If you want to train your own AlphaPharm from scratch, just change `test` to `train` in the `run.sh` file. Then you will see the training process with the following formats:
-
->[2023-10-24 15:30:52,632::train::INFO] Building model...
->
->[2023-10-24 15:30:52,640::train::INFO] Training model...
->
->[2023-10-24 15:31:52,644::train::INFO] [Train] Iter 1 | reward [a floating point number]
->
->[2023-10-24 15:32:53,329::train::INFO] [Train] Iter 2 | reward [a floating point number]
->
->[2023-10-24 15:32:53,329::train::INFO] [Train] Iter 3 | reward [a floating point number]
-
-
-
-
-## <a name="more"></a>More information about AlphaPharm
-
-### <a name="installation"></a>Installation
+### <a name="installation"></a>Installation guide
 
 #### Dependency
 
@@ -109,6 +64,51 @@ conda install -c conda-forge py-xgboost-gpu
 
 
 
+
+
+## <a name="example"></a>Get started with AlphaPharm
+
+First, you need to simply accomplish two steps to loading the data.
+
+1. Download the dataset archive `data.zip` from [this link](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link).
+2. Extract the ZIP archive using the command: `unzip data.zip`.
+
+Then, you can test or train the AlphaPharm model.
+
+### <a name="obutton"></a>The testing of AlphaPharm
+As soon as you execute `bash run.sh`, the testing process will be started, performing the molecule identification process for certain properties with the model. You will get the performance at the bottom of a log file with the following formats: 
+
+>********Statistic Performance********
+>
+>Average success rate: [a percentage]
+>
+>Average search steps: [an integer]
+>
+>time cost [a floating point number] s
+
+If you want to test AlphaPharm on the other properties, you can edit the `test.sh` file by revising the value of the `--task_id` argument. (Domain of this argument: [0, 1, 2])
+
+
+
+### <a name="otraining"></a>The training of AlphaPharm
+
+If you want to train your own AlphaPharm from scratch, just change `test` to `train` in the `run.sh` file. Then you will see the training process with the following formats:
+
+>[2023-10-24 15:30:52,632::train::INFO] Building model...
+>
+>[2023-10-24 15:30:52,640::train::INFO] Training model...
+>
+>[2023-10-24 15:31:52,644::train::INFO] [Train] Iter 1 | reward [a floating point number]
+>
+>[2023-10-24 15:32:53,329::train::INFO] [Train] Iter 2 | reward [a floating point number]
+>
+>[2023-10-24 15:32:53,329::train::INFO] [Train] Iter 3 | reward [a floating point number]
+
+
+
+
+## <a name="more"></a>More information
+
 ### <a name="datasets"></a>Datasets
 
 To train and analyze the AlphaPharm model, we constructed a large-scale dataset from MoleculeNet and ChEMBL. Due to the storage limitation in Github, the complete data are organized in the [data](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link) Google Drive folder. The raw data is in the `raw_data` folder and the data directly loaded by the model is stored in `data.zip`.  
@@ -120,7 +120,7 @@ To train and analyze the AlphaPharm model, we constructed a large-scale dataset 
 
 #### Training from scratch
 
-You could train their own AlphaPharm from scratch with the following bash order.
+You could train your own AlphaPharm from scratch with the following bash order.
 
 ```bash
 python run.py --mode train --save_path [saved_model_path]
@@ -129,7 +129,7 @@ python run.py --mode train --save_path [saved_model_path]
 For example:
 
 ```bash
-python -u run.py --mode train --save_path results/run_train
+python -u run.py --mode train --save_path ./results/run_train
 ```
 
 
