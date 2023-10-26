@@ -1,12 +1,17 @@
-import pickle, time
+import pickle, time,os
+os.environ["PYTHONWARNINGS"] = "ignore"
 import numpy as np
+import math
 from optparse import OptionParser
-
+import warnings
+warnings.filterwarnings("ignore")
 from utils import *
 from data import *
+
 from train import *
 from test import *
-from case import *
+
+
 
 
 parser = OptionParser()
@@ -18,13 +23,12 @@ parser.add_option("--num_iter", dest="num_iter", default=10)
 parser.add_option("--optnum", dest="optnum", default=20)
 parser.add_option("--maxepoch", dest="maxepoch", default=160000)
 parser.add_option("--gamma", dest="gamma", default=0.5)
-parser.add_option("--pri", dest="pri", default='true')
+parser.add_option("--pri", dest="pri", default='false')
 parser.add_option("--active_flag", dest="active_flag", default='true')
 parser.add_option("--epsilon", dest="epsilon", default=0.1)
 parser.add_option("--mode", dest="mode", default='train')
 parser.add_option("--custom", dest="custom", default='')
 parser.add_option("--case_task", dest="case_task", default=0)
-parser.add_option("--data_path", dest="data_path", default='datasets')
 parser.add_option("--save_path", dest="save_path", default='')
 parser.add_option("--model_path", dest="model_path", default='')
 parser.add_option("--continue_epoch", dest="continue_epoch", default=0)
@@ -32,11 +36,8 @@ parser.add_option("--continue_rewards", dest="continue_rewards", default=0)
 parser.add_option("--continue_distances", dest="continue_distances", default=0)
 parser.add_option("--test_path", dest="test_path", default='')
 parser.add_option("--test_times", dest="test_times", default=100)
-parser.add_option("--begin", dest="begin", default=0)
-parser.add_option("--end", dest="end", default=0)
+parser.add_option("--task_id", dest="task_id", default=0)
 opts,args = parser.parse_args()
-print(opts)
-
 
 
 seed = int(opts.seed) 
@@ -53,7 +54,6 @@ epsilon = float(opts.epsilon)
 mode = str(opts.mode)
 custom = str(opts.custom)  
 case_task = int(opts.case_task)  
-data_path = str(opts.data_path) + "/"
 save_path = str(opts.save_path) + "/"
 model_path = str(opts.model_path) 
 continue_epoch = int(opts.continue_epoch)
@@ -61,12 +61,9 @@ continue_rewards = float(opts.continue_rewards)
 continue_distances = float(opts.continue_distances)
 test_path = str(opts.test_path)  
 test_times = int(opts.test_times) 
-begin = int(opts.begin) 
-end = int(opts.end)
+task_id = int(opts.task_id) 
 
 mksure_path(save_path)
-mksure_path(data_path)
-
 
 
 if __name__ == "__main__":
@@ -74,8 +71,11 @@ if __name__ == "__main__":
     set_seed(seed)
 
     if mode == "train":
+        # Logging
+        logger = get_logger('train', save_path)
+        logger.info(opts)
+
         datasets_list = load_train_datasets()
-        print(len(datasets_list))
         rewards_list = train(
             datasets_list,
             save_path,
@@ -84,6 +84,7 @@ if __name__ == "__main__":
             continue_rewards,
             continue_distances,
             mode,
+            logger,
             lstmdim,
             search_space,
             searchtimes, 
@@ -113,22 +114,24 @@ if __name__ == "__main__":
 
 
     elif mode == "test":
-        datasets_list = load_test_datasets()
-        print(len(datasets_list))
+        dataset_num = task_id
+        datasets_list, datasets_name, val_nos = load_test_datasets()
+        dataset_obj_idx, y_obj_no = get_obj_task(val_nos[dataset_num], datasets_list)
+        datasets_list = datasets_list[dataset_obj_idx]
 
-        for dataset_num in range(begin, end):
+        try:
             al_find = 0
             al_re = 0
             al_avgsota = 0
             al_dis = 0
-
-            print(str(dataset_num) + ": ", datasets_list[dataset_num].get_task_names()[0])
+            al_step = 0
+            print("Task: ", datasets_name[dataset_num])
 
             for i in range(test_times):  
-                print("*"*8 + "Case " + str(i) + "*"*8)
-                alre, alsota, aldis = test(
+                print("*"*8 + "Test " + str(i) + "*"*8)
+                alre, alsota, aldis, alstep = test(
                     datasets_list,
-                    dataset_num,
+                    y_obj_no,
                     save_path,
                     test_path,
                     mode,
@@ -143,74 +146,24 @@ if __name__ == "__main__":
                     active_flag,
                     epsilon
                 )
-                if aldis < 1e-5:
+                if alstep <= num_iter + 1:
                     al_find += 1
 
                 al_re += alre
                 al_avgsota += alsota
                 al_dis += aldis
+                al_step += alstep
 
             print("*"*8 + "Statistic Performance" + "*"*8)
-            print("-"*5 + "Active Learning" + "-"*5)
-            print("re: ", al_re / test_times)
-            print("avgsota: ", al_avgsota / test_times)
-            print("distance: ", al_dis / test_times)
-            print("find sota cnt: %d in %d searches, ratio: %f" % (al_find, test_times, al_find/test_times))
+            print("Average success rate: %.2f%%" % ((al_find/test_times)*100))
+            print("Average search steps: %d" % (math.ceil(al_step/test_times)))
 
+        except KeyboardInterrupt:
+            print("Terminating...")
 
         time_end = time.time()
         print('time cost', time_end - time_start, 's')
 
-
-
-    elif mode == "custom":
-        al_find = 0
-        al_re = 0
-        al_avgsota = 0
-        al_dis = 0
-
-        dataset = dc.data.DiskDataset(custom)
-        print(dataset)
-
-        test_times = len(dataset)
-
-
-        for i in range(test_times): 
-            print("*"*8 + "Custom " + str(i) + "*"*8)
-            alre, alsota, aldis = case(
-                dataset,
-                save_path,
-                test_path,
-                mode,
-                i,  
-                lstmdim,
-                search_space,
-                searchtimes, 
-                num_iter,
-                optnum,
-                maxepoch,
-                gamma,
-                pri,
-                active_flag,
-                epsilon
-            )
-            if aldis < 1e-5:
-                al_find += 1
-
-            al_re += alre
-            al_avgsota += alsota
-            al_dis += aldis
-
-        print("*"*8 + "Statistic Performance" + "*"*8)
-        print("-"*5 + "Active Learning" + "-"*5)
-        print("re: ", al_re / test_times)
-        print("avgsota: ", al_avgsota / test_times)
-        print("distance: ", al_dis / test_times)
-        print("find sota cnt: %d in %d searches, ratio: %f" % (al_find, test_times, al_find/test_times))
-
-
-        time_end = time.time()
-        print('time cost', time_end - time_start, 's') 
 
     else:
         raise Exception("mode error!!!") 

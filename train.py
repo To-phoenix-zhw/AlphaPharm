@@ -1,4 +1,5 @@
 import torch, math, random
+from tqdm import tqdm
 import numpy as np
 import pandas as pd
 import torch.nn.functional as F
@@ -8,6 +9,7 @@ from torch.nn.utils import clip_grad_norm_
 
 from models import *
 from data import *
+from utils import *
 
 def train(
     datasets_list,
@@ -17,6 +19,7 @@ def train(
     continue_rewards,
     continue_distances,
     mode,
+    logger,
     lstmdim=256,
     search_space=50,
     searchtimes=3, 
@@ -24,7 +27,7 @@ def train(
     optnum=20, 
     maxepoch=20000,
     gamma=0.5,
-    pri=True,
+    pri=False,
     active_flag=True,
     epsilon=0.1,
 ):
@@ -34,10 +37,13 @@ def train(
     models_list = [] 
     SOTAs_list = []  
 
-    almodel = ActiveModel(lstmdim).cuda()  
+    logger.info('Building model...')
+    checkpoint_path = get_checkpoint_dir(save_path)
+
+    almodel = ActiveModel(lstmdim) 
     if model_path != '':
         almodel = torch.load(model_path)
-        print("Load Model: %s, continue training." % (model_path))
+        # print("Load Model: %s, continue training." % (model_path))
         rewards = continue_rewards*continue_epoch
         distances = continue_distances*continue_epoch
     
@@ -47,8 +53,10 @@ def train(
     cx = torch.randn(1, lstmdim) 
     
     train_nos = list(range(len(datasets_list)))
+    train_loop = tqdm(range(maxepoch), desc='Training')
 
-    for cur_epo in range(maxepoch):
+    logger.info('Training model...')
+    for cur_epo in train_loop:
         # random choose a task
         dataset_obj_idx = np.random.choice(train_nos)
         dataset = datasets_list[dataset_obj_idx]
@@ -64,8 +72,8 @@ def train(
         if X.shape[0] != search_space:
             raise Exception("X error!!!") 
             
-        print("*****EPOCH %d TASK %d %s *****" % (cur_epo+1, dataset_obj_idx, task_name)) 
-        print(X.shape, y.shape, ids.shape)  
+        # print("*****EPOCH %d TASK %d %s *****" % (cur_epo+1, dataset_obj_idx, task_name)) 
+        # print(X.shape, y.shape, ids.shape)  
 
         if cur_epo < continue_epoch:
             continue
@@ -80,8 +88,8 @@ def train(
     
         # search
         for j in range(searchtimes):
-            print("---Into the search " + str(j+1) +  " (%d experiments)---" % num_iter)
-            loss, model, re, sota = run_al_epoch(
+            # print("---Into the search " + str(j+1) +  " (%d experiments)---" % num_iter)
+            loss, model, re, sota, step = run_al_epoch(
                 X, y, ids,
                 GT_max_point, GT_min_point, 
                 initial_point, 
@@ -99,8 +107,8 @@ def train(
             reward_list.append(re)
             model_list.append(model)
             SOTA_list.append(sota)
-            print("this search reward %.4f" % re)
-            print("---Ending the search(10 experiments)---")
+            # print("this search reward %.4f" % re)
+            # print("---Ending the search(10 experiments)---")
         
         # Gradients: only use losses of search processes whose reward is bigger than the average 
         cur_re = 0
@@ -126,18 +134,14 @@ def train(
         rewards_list.append(rewards/(cur_epo+1))
         models_list.append(model_list[np.argmax(reward_list)])
         SOTAs_list.append(SOTA_list[np.argmax(SOTA_list)])
-        
-        print("epoch", cur_epo+1)
-        print("epoch GTMax", GT_max_point.y.item())
-        print("epoch Initial", initial_point.y.item())
-        print("epoch SOTA", SOTAs_list[-1])
-        print("rewards", rewards/(cur_epo+1))
-        print("distances", distances/(cur_epo+1))
-        
+
+        logger.info('[Train] Iter %d | reward %.6f' % (cur_epo+1, rewards/(cur_epo+1)))
         if ((cur_epo+1)==1) or ((cur_epo+1)%optnum==0):
              # Save models every 20 episodes         
-            torch.save(almodel, save_path + 'almodel_'+ str(cur_epo+1) + '.pt')
+            torch.save(almodel, checkpoint_path + '/almodel_'+ str(cur_epo+1) + '.pt')
         
-        print("*****ENDING THE EPOCH %d TASK %d %s *****" % (cur_epo+1, dataset_obj_idx, task_name)) 
+        train_loop.set_description(f'Iter [{cur_epo+1}/{maxepoch}]')
+        train_loop.set_postfix(reward = rewards/(cur_epo+1))
+        # print("*****ENDING THE EPOCH %d TASK %d %s *****" % (cur_epo+1, dataset_obj_idx, task_name)) 
 
     return rewards_list

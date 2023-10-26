@@ -47,9 +47,9 @@ class ActiveModel(nn.Module):
     ):
         newX = former_X[-1, :]  
         newy = former_y[-1, :].item()  
-        shaped_SOTA = torch.FloatTensor([[SOTA]]).cuda()
-        shaped_newX = self.dr(newX.unsqueeze(dim=0).cuda())
-        shaped_newy = torch.FloatTensor([[newy]]).cuda()
+        shaped_SOTA = torch.FloatTensor([[SOTA]])
+        shaped_newX = self.dr(newX.unsqueeze(dim=0))
+        shaped_newy = torch.FloatTensor([[newy]])
 
         # historical experimental records and previously optima
         rnninput = torch.cat((shaped_SOTA, torch.cat((shaped_newX, shaped_newy), dim=1)), dim=1) 
@@ -85,9 +85,9 @@ def fitting_model(X, y, num_epoch=1000, early_stopping_rounds=5):
     rX = X.cpu().numpy()
     ry = y.cpu().numpy()
     # print("fitting model shape", rX.shape, ry.shape)
-    reg = xgb.XGBRegressor(n_estimators=num_epoch, tree_method="gpu_hist", eval_metric=mean_squared_error)
+    reg = xgb.XGBRegressor(n_estimators=num_epoch, eval_metric=mean_squared_error)
     reg.fit(rX, ry, eval_set=[(rX, ry)], early_stopping_rounds=early_stopping_rounds, verbose=0)
-    print("xgb rmse: %.4f in %d" % (mean_squared_error(ry, reg.predict(rX), squared=False), reg.best_iteration))
+    # print("xgb rmse: %.4f in %d" % (mean_squared_error(ry, reg.predict(rX), squared=False), reg.best_iteration))
 
     return reg, reg.best_iteration
 
@@ -143,48 +143,75 @@ def run_al_epoch(
     
     # Previously optimal record
     SOTA = initial_point.y.item()
+    SOTA_mol = initial_point.smi
 
     logps = []
     rewards = []
-    
-    for i in range(num_iter):
-        datatensorX = torch.FloatTensor(already_dataX).detach().cuda()  
-        datatensory = torch.FloatTensor(already_datay).detach().cuda()  
+    max_steps = 0  
+
+    if pri:
+        print("Begin identifying...")
+        print("Step 0:")
+        print("Random initialization: ", initial_point.smi)
+        print("Property value: ", initial_point.y.item())
+
+
+
+    if mode == 'train':
+        maximum_trail_times = num_iter
+    else:
+        maximum_trail_times = search_space - 1 
+
+    for i in range(maximum_trail_times):
+        dist = math.fabs(SOTA - GT_max_point.y.item())/(GT_max_point.y.item() + 1e-5)
+        if dist < 1e-5 and i >= num_iter:
+            break
+
+        datatensorX = torch.FloatTensor(already_dataX).detach()  
+        datatensory = torch.FloatTensor(already_datay).detach() 
 
         # property predictor
         model, _ = fitting_model(datatensorX, datatensory, num_epoch=1000)
     
-        train_X = torch.FloatTensor(ready_dataX).cuda() 
-        train_y = torch.FloatTensor(model.predict(ready_dataX)).unsqueeze(dim=1).cuda()
+        train_X = torch.FloatTensor(ready_dataX)
+        train_y = torch.FloatTensor(model.predict(ready_dataX)).unsqueeze(dim=1)
 
         # policy learning       
         scores, hx, cx = almodel(train_X, train_y, SOTA,
                                  datatensorX, datatensory,
-                                 hx.cuda(), cx.cuda())
+                                 hx, cx)
         
         # select a molecule for experimentation 
         index = choose_experimental_x(train_X.size(0), scores, active_flag=active_flag, epsilon=epsilon, mode=mode)
         measuredX = train_X[index]  
         measuredy = ready_datay[index].item()  
-        print("Measured Point: ", ready_dataid[index])
+        if pri:
+            print("Step %d:"%(i+1))
+            print("Selected molecule: ", ready_dataid[index])
 
         if len(scores.shape) == 0:   
             logp = torch.log(scores) # only left the last sample
-            print("ALscore & PredictY & RealY ", scores.item(), train_y[index].item(), measuredy)
+            if pri:
+                print("Property value: ", measuredy)
         else:
             logp = torch.log(scores[index])  
-            print("ALscore & PredictY & RealY ", scores[index].item(), train_y[index].item(), measuredy)
+            if pri:
+                print("Property value: ", measuredy)
         
         # compute the immediate reward
         if (measuredy > SOTA) and (math.fabs(measuredy-SOTA)>1e-5):
             reward = (measuredy - SOTA)/(GT_max_point.y.item() - initial_point.y.item() + 1e-5)
             SOTA = measuredy
-            print("UPDATE SOTA", SOTA)
+            SOTA_mol = ready_dataid[index]
+
+            dist = math.fabs(SOTA - GT_max_point.y.item())/(GT_max_point.y.item() + 1e-5)
+            if dist < 1e-5:
+                max_steps = i + 2  
+
         else:
             reward = 0
-        
-        print('REWARD %.4f ' % (reward))
-        
+
+
         # Update the historical experimental records and untested molecule candidates
         already_dataX = np.concatenate((already_dataX, ready_dataX[index].reshape(1, -1)))
         already_datay = np.concatenate((already_datay, ready_datay[index].reshape(1, -1)))
@@ -209,10 +236,8 @@ def run_al_epoch(
         loss = loss-retr[i]*logps[i]
     
     if pri:
-        print('GT_max_point', GT_max_point)
-        print('Initial_point', initial_point)
-        print('Finded_SOTA', SOTA)   
-        print('distance', math.fabs(SOTA - GT_max_point.y.item())/(GT_max_point.y.item() + 1e-5))
+        print("Information about the current candidate pool (100 molecules):")
+        print("the identified molecule with the highest property value: ", SOTA_mol, SOTA)
+        print("the ground truth molecule with the highest property value: ", GT_max_point.smi, GT_max_point.y.item())
     
-    
-    return loss, model, np.sum(rewards), SOTA
+    return loss, model, np.sum(rewards), SOTA, max_steps

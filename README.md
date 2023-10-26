@@ -1,15 +1,19 @@
 # <a name="AlphaPharm"></a> AlphaPharm: a reinforcement-active learning framework to streamline lead optimization in drug discovery
 
-Official PyTorch implementation of paper "AlphaPharm: a reinforcement-active learning framework to streamline lead optimization in drug discovery".
+Official PyTorch implementation of paper "AlphaPharm: a reinforcement-active learning framework to streamline lead optimization in drug discovery". 
 
 [AlphaPharm](#AlphaPharm)
 
 - [Overview](#overview)
-- [Installation](#installation)
-- [Datasets](#datasets)
-- [Training](#training)
-- [Testing](#testing)
-- [Contact](#contact)
+- [The testing of AlphaPharm'](#obutton)
+- [The training of AlphaPharm](#otraining)
+- [More information](#more)
+  - [Installation](#installation)
+  - [Datasets](#datasets)
+  - [Training](#training)
+  - [Testing](#testing)
+  - [Contact](#contact)
+
 
 ## <a name="overview"></a>Overview
 
@@ -20,24 +24,56 @@ Specifically, AlphaPharm contains two main modules, the property predictor and t
 Thanks to the above design, AlphaPharm significantly outperforms all the current active learning and few-shot learning methods. It should be noted that AlphaPharm astoundingly singled out a drug candidate, AA-35, with the most potent analgesic activity, from a pool of 51 compounds in just six trials. These findings validate proof-of-concept and highlight the promise of AlphaPharm as a powerful AI-driven computational tool for drug discovery.
 <img src="./figure/Figure1.svg">
 
+## <a name="obutton"></a>The testing of AlphaPharm
+As soon as you execute `bash run.sh`, the testing process will be started, performing the molecule identification process for certain properties with the trained AlphaPharm model. You will get the performance at the bottom of the log file (`results/output`) with the following formats: 
+
+>********Statistic Performance********
+>
+>Average success rate: [a percentage]
+>
+>Average search steps: [an integer]
+>
+>time cost [a floating point number] s
+
+If you want to test AlphaPharm on the other properties, you can edit the `test.sh` file by revising the value of the `--task_id` argument. (Domain of this argument: [0, 1, 2])
 
 
-## <a name="installation"></a>Installation
 
-### Dependency
+## <a name="otraining"></a>The training of AlphaPharm
+
+If you want to train your own AlphaPharm from scratch, just change `test` to `train` in the `run.sh` file. Then you will see the training process with the following formats:
+
+>[2023-10-24 15:30:52,632::train::INFO] Building model...
+>
+>[2023-10-24 15:30:52,640::train::INFO] Training model...
+>
+>[2023-10-24 15:31:52,644::train::INFO] [Train] Iter 1 | reward [a floating point number]
+>
+>[2023-10-24 15:32:53,329::train::INFO] [Train] Iter 2 | reward [a floating point number]
+>
+>[2023-10-24 15:32:53,329::train::INFO] [Train] Iter 3 | reward [a floating point number]
+
+
+
+
+## <a name="more"></a>More information about AlphaPharm
+
+### <a name="installation"></a>Installation
+
+#### Dependency
 
 The code has been tested in the following environment:
 
 | Package  | Version  |
 | -------- | -------- |
-| Python   | 3.8      |
+| Python   | 3.7      |
 | PyTorch  | 1.8.0    |
 | CUDA     | 11.1     |
 | RDKit    | 2022.9.1 |
 | DeepChem | 2.7.1    |
 | XGBoost  | 2.0.0    |
 
-### Install via Conda and Pip
+#### Install via Conda and Pip
 
 ```bash
 conda create -n AlphaPharm python=3.8
@@ -59,55 +95,55 @@ The code should work with Python >= 3.7. Researchers could change the package ve
 
 
 
-## <a name="datasets"></a>Datasets
+### <a name="datasets"></a>Datasets
 
-To train and analyze the AlphaPharm model, we constructed a large-scale dataset from MoleculeNet and ChEMBL. The data are organized in the [data](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link) Google Drive folder. The raw data is in the `raw_data` folder. The data directly loaded by the model is stored in `datasets.zip`.
-
-
+To train and analyze the AlphaPharm model, we constructed a large-scale dataset from MoleculeNet and ChEMBL. Due to the storage limitation in Github, the complete data are organized in the [data](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link) Google Drive folder. The raw data is in the `raw_data` folder and the data directly loaded by the model is stored in `datasets.zip`.
 
 
-## <a name="training"></a>Training
 
-### Training from scratch
+
+### <a name="training"></a>Training
+
+#### Training from scratch
 
 Researchers could train their own AlphaPharm from scratch with the following bash order.
 
 ```bash
-python run.py --mode train --save_path [saved_model_path] > [train_log_file_name]
+python run.py --mode train --save_path [saved_model_path]
 ```
 
 For example:
 
 ```bash
-python -u run.py --mode train --save_path run_train > run_train.log
+python -u run.py --mode train --save_path results/run_train
 ```
 
-### Trained model checkpoint
-
-We uploaded the model to the `checkpoints` folder.
 
 
+#### Trained model checkpoint
 
-## <a name="testing"></a>Testing
+We uploaded the trained model to the `checkpoints` folder.
 
-### Testing on the dataset
+
+
+### <a name="testing"></a>Testing
+
+#### Testing on the dataset
 
 Researchers could test the model on the test dataset.
 
 ```bash
-mkdir [test_log_folder]
-python -u run.py --mode test --searchtimes 1 --test_times 100 --save_path [saved_model_path] --test_path [saved_model_name] --begin [task_id] --end [task_id] > [test_log_file_name]
+python -u run.py --mode test --searchtimes 1 --test_times [times of testing] --save_path [saved_model_path] --test_path [saved_model_name] --pri true --task_id [task_id]
 ```
 
 For example:
 
 ```bash
-mkdir run_test
-python -u run.py --mode test --searchtimes 1 --test_times 1 --save_path run_train --test_path almodel_85000.pt --begin 0 --end 1 > run_test/AlphaPharm_0_1.log
+python -u run.py --mode test --searchtimes 1 --test_times 100 --save_path checkpoints --test_path almodel_75000.pt --pri true --task_id 0
 ```
 
 
 
-## <a name="contact"></a>Contact
+### <a name="contact"></a>Contact
 
 If you encounter any problems during the setup of environment or the execution of AlphaPharm, do not hesitate to contact [liuxianggen@scu.edu.cn](mailto:liuxianggen@scu.edu.cn) or [hanwenzhang@stu.scu.edu.cn](mailto:hanwenzhang@stu.scu.edu.cn). You could also create an issue under the repository: https://github.com/To-phoenix-zhw/AlphaPharm.
