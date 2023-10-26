@@ -31,7 +31,7 @@ Thanks to the above design, AlphaPharm significantly outperforms all the current
 
 
 ## <a name="obutton"></a>The testing of AlphaPharm
-First, you need simply accomplish two steps to loading the data.
+First, you need to simply accomplish two steps to loading the data.
 
 1. Download the dataset archive `data.zip` from [this link](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link).
 2. Extract the ZIP archive using the command: `unzip data.zip`.
