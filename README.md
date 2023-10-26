@@ -40,7 +40,7 @@ First, you need to simply accomplish two steps to loading the data.
 
 Then, you can test the AlphaPharm model. 
 
-As soon as you execute `bash run.sh`, the testing process will be started, performing the molecule identification process for certain properties with the trained AlphaPharm model. You will get the performance at the bottom of a log file with the following formats: 
+As soon as you execute `bash run.sh`, the testing process will be started, performing the molecule identification process for certain properties with the model. You will get the performance at the bottom of a log file with the following formats: 
 
 >********Statistic Performance********
 >
@@ -120,7 +120,7 @@ To train and analyze the AlphaPharm model, we constructed a large-scale dataset 
 
 #### Training from scratch
 
-Researchers could train their own AlphaPharm from scratch with the following bash order.
+You could train their own AlphaPharm from scratch with the following bash order.
 
 ```bash
 python run.py --mode train --save_path [saved_model_path]
@@ -144,7 +144,7 @@ We uploaded the trained model to the `checkpoints` folder.
 
 #### Testing on the dataset
 
-Researchers could test the model on the test dataset.
+You could test the model on the test dataset.
 
 ```bash
 python -u run.py --mode test --searchtimes 1 --test_times [times of testing] --save_path [saved_model_path] --test_path [saved_model_name] --pri true --task_id [task_id]
