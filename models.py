@@ -47,9 +47,9 @@ class ActiveModel(nn.Module):
     ):
         newX = former_X[-1, :]  
         newy = former_y[-1, :].item()  
-        shaped_SOTA = torch.FloatTensor([[SOTA]])
-        shaped_newX = self.dr(newX.unsqueeze(dim=0))
-        shaped_newy = torch.FloatTensor([[newy]])
+        shaped_SOTA = torch.FloatTensor([[SOTA]]).to(train_X.device)
+        shaped_newX = self.dr(newX.unsqueeze(dim=0)).to(train_X.device)
+        shaped_newy = torch.FloatTensor([[newy]]).to(train_X.device)
 
         # historical experimental records and previously optima
         rnninput = torch.cat((shaped_SOTA, torch.cat((shaped_newX, shaped_newy), dim=1)), dim=1) 
@@ -118,6 +118,7 @@ def run_al_epoch(
     almodel, 
     hx, cx,
     mode,
+    device,
     gamma=0.5,
     num_iter=10, 
     pri=True, 
@@ -167,19 +168,19 @@ def run_al_epoch(
         if dist < 1e-5 and i >= num_iter:
             break
 
-        datatensorX = torch.FloatTensor(already_dataX).detach()  
-        datatensory = torch.FloatTensor(already_datay).detach() 
+        datatensorX = torch.FloatTensor(already_dataX).detach().to(device) 
+        datatensory = torch.FloatTensor(already_datay).detach().to(device)
 
         # property predictor
         model, _ = fitting_model(datatensorX, datatensory, num_epoch=1000)
     
-        train_X = torch.FloatTensor(ready_dataX)
-        train_y = torch.FloatTensor(model.predict(ready_dataX)).unsqueeze(dim=1)
+        train_X = torch.FloatTensor(ready_dataX).to(device)
+        train_y = torch.FloatTensor(model.predict(ready_dataX)).unsqueeze(dim=1).to(device)
 
         # policy learning       
         scores, hx, cx = almodel(train_X, train_y, SOTA,
                                  datatensorX, datatensory,
-                                 hx, cx)
+                                 hx.to(device), cx.to(device))
         
         # select a molecule for experimentation 
         index = choose_experimental_x(train_X.size(0), scores, active_flag=active_flag, epsilon=epsilon, mode=mode)

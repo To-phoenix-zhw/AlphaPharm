@@ -20,6 +20,7 @@ def train(
     continue_distances,
     mode,
     logger,
+    device,
     lstmdim=256,
     search_space=50,
     searchtimes=3, 
@@ -40,7 +41,7 @@ def train(
     logger.info('Building model...')
     checkpoint_path = get_checkpoint_dir(save_path)
 
-    almodel = ActiveModel(lstmdim) 
+    almodel = ActiveModel(lstmdim).to(device)
     if model_path != '':
         almodel = torch.load(model_path)
         # print("Load Model: %s, continue training." % (model_path))
@@ -97,6 +98,7 @@ def train(
                 almodel, 
                 hx, cx,
                 mode,
+                device,
                 gamma,
                 num_iter,
                 pri, 

@@ -5,7 +5,7 @@ Official PyTorch implementation of paper "AlphaPharm: a reinforcement-active lea
 [AlphaPharm](#AlphaPharm)
 
 - [Overview](#overview)
-- [The testing of AlphaPharm'](#obutton)
+- [The testing of AlphaPharm](#obutton)
 - [The training of AlphaPharm](#otraining)
 - [More information](#more)
   - [Installation](#installation)

@@ -12,6 +12,7 @@ def test(
     save_path,
     test_path,
     mode,
+    device,
     lstmdim=256,
     search_space=1000,
     searchtimes=1, 
@@ -23,7 +24,7 @@ def test(
     active_flag=True,
     epsilon=0.1,
 ):
-    almodel = torch.load(save_path + test_path, map_location='cpu')
+    almodel = torch.load(save_path + test_path, map_location=device)
     hx = torch.randn(1, lstmdim) 
     cx = torch.randn(1, lstmdim) 
 
@@ -69,6 +70,7 @@ def test(
         almodel, 
         hx, cx,
         mode,
+        device,
         gamma,
         num_iter,
         pri, 

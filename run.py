@@ -15,6 +15,7 @@ from test import *
 
 
 parser = OptionParser()
+parser.add_option("--device", dest="device", default='cpu')  # you can change it to 'cuda:0'
 parser.add_option("--seed", dest="seed", default=0)
 parser.add_option("--lstmdim", dest="lstmdim", default=256)
 parser.add_option("--search_space", dest="search_space", default=100)
@@ -39,7 +40,7 @@ parser.add_option("--test_times", dest="test_times", default=100)
 parser.add_option("--task_id", dest="task_id", default=0)
 opts,args = parser.parse_args()
 
-
+device = str(opts.device)
 seed = int(opts.seed) 
 lstmdim = int(opts.lstmdim)  
 search_space = int(opts.search_space)  
@@ -85,6 +86,7 @@ if __name__ == "__main__":
             continue_distances,
             mode,
             logger,
+            device,
             lstmdim,
             search_space,
             searchtimes, 
@@ -135,6 +137,7 @@ if __name__ == "__main__":
                     save_path,
                     test_path,
                     mode,
+                    device,
                     lstmdim,
                     search_space,
                     searchtimes, 
