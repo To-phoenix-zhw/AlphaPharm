@@ -26,7 +26,6 @@ AlphaPharm is a novel reinforcement-active learning framework that systematicall
 Specifically, AlphaPharm contains two main modules, the property predictor and the policy network. At each decision-making iteration, the property predictor takes the fingerprints of the candidate molecules and estimates their property values. The policy network accepts the molecules, their estimated property values, and previous optimal records as inputs to decide which candidate should be tested next. 
 
 Thanks to the above design, AlphaPharm significantly outperforms all the current active learning and few-shot learning methods. It should be noted that AlphaPharm astoundingly singled out a drug candidate, AA-35, with the most potent analgesic activity, from a pool of 51 compounds in just six trials. These findings validate proof-of-concept and highlight the promise of AlphaPharm as a powerful AI-driven computational tool for drug discovery.
-<img src="./figure/Figure1.svg">
 
 
 
