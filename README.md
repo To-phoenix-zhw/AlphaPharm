@@ -84,12 +84,10 @@ As soon as you execute `bash run.sh`, the testing process will be started, perfo
 >Average success rate: [a percentage]
 >
 >Average search steps: [an integer]
-
-
-
+>
 >time cost [a floating point number] s
 
-If you want to test AlphaPharm on the other properties, you can edit the `test.sh` file by revising the value of `--task_id` argument. (Domain of this argument: [0, 1, 2])
+If you want to test AlphaPharm on the other properties, you can edit the `test.sh` file by revising the value of the `--task_id` argument. (Domain of this argument: [0, 1, 2])
 
 
 
