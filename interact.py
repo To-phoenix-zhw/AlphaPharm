@@ -71,51 +71,7 @@ if __name__ == "__main__":
     time_start = time.time()
     set_seed(seed)
 
-    if mode == "train":
-        # Logging
-        logger = get_logger('train', save_path)
-        logger.info(opts)
-
-        datasets_list = load_train_datasets()
-        rewards_list = train(
-            datasets_list,
-            save_path,
-            model_path,
-            continue_epoch,
-            continue_rewards,
-            continue_distances,
-            mode,
-            logger,
-            device,
-            lstmdim,
-            search_space,
-            searchtimes, 
-            num_iter,
-            optnum,
-            maxepoch,
-            gamma,
-            pri,
-            active_flag,
-            epsilon
-        )
-        
-
-        record_path = save_path + "run_result/"
-        mksure_path(record_path)
-        
-
-        xline=list(np.arange(len(rewards_list)))
-        plt.plot(xline,rewards_list)
-        plt.savefig(record_path + 'runresult.svg')
-
-        with open(record_path + "rewards_list.txt", "wb") as fp:  
-            pickle.dump(rewards_list, fp)
-
-        time_end = time.time()
-        print('time cost', time_end - time_start, 's')
-
-
-    elif mode == "test":
+    if mode == "test":
         dataset_num = task_id
         datasets_list, datasets_name, val_nos = load_test_datasets()
         dataset_obj_idx, y_obj_no = get_obj_task(val_nos[dataset_num], datasets_list)
