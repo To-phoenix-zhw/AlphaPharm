@@ -1,10 +1,13 @@
+import logging
+import requests
+deepchem_logger = logging.getLogger('deepchem')
+deepchem_logger.setLevel(logging.CRITICAL)
+dc_logger1= logging.getLogger('dc')
+dc_logger1.setLevel(logging.CRITICAL)
 import pickle, time,os
-os.environ["PYTHONWARNINGS"] = "ignore"
 import numpy as np
 import math
 from optparse import OptionParser
-import warnings
-warnings.filterwarnings("ignore")
 from utils import *
 from data import *
 
