@@ -1,6 +1,3 @@
-python -u interact.py --fold 3 --searchtimes 1 --mode custom --save_path checkpoints --test_path almodel_75000.pt --custom data/data-LD/
-
-
 # <a name="AlphaPharm"></a> AlphaPharm: a reinforcement-active learning framework to streamline lead optimization in drug discovery
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/To-phoenix-zhw/AlphaPharm/blob/main/LICENSE)
