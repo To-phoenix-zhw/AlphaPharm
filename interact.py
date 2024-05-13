@@ -84,6 +84,7 @@ mksure_path(data_path)
 
 
 
+
 class Point(object):
     def __init__(self, idx, X, y, smi):
         self.idx = idx
