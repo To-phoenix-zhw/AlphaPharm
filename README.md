@@ -1,3 +1,6 @@
+python -u interact.py --fold 3 --searchtimes 1 --mode custom --save_path checkpoints --test_path almodel_75000.pt --custom data/data-LD/
+
+
 # <a name="AlphaPharm"></a> AlphaPharm: a reinforcement-active learning framework to streamline lead optimization in drug discovery
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/To-phoenix-zhw/AlphaPharm/blob/main/LICENSE)
@@ -71,7 +74,7 @@ conda install -c conda-forge py-xgboost-gpu
 
 First, you need to simply accomplish two steps to loading the data.
 
-1. Download the dataset archive `data.zip` from [this link](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link).
+1. Download the dataset archive `data.zip` from  [data](https://osf.io/ck94p).
 2. Extract the ZIP archive using the command: `unzip data.zip`.
 
 Then, you can test or train the AlphaPharm model.
@@ -112,9 +115,7 @@ If you want to train your own AlphaPharm from scratch, just change `test` to `tr
 
 ### <a name="datasets"></a>Datasets
 
-To train and analyze the AlphaPharm model, we constructed a large-scale dataset from MoleculeNet and ChEMBL. Due to the storage limitation in Github, the complete data are organized in the [data](https://drive.google.com/drive/folders/1mPZCfQl5gKSgLEwnwMkyjgDidJaTbXgg?usp=share_link) Google Drive folder. The raw data is in the `raw_data` folder and the data directly loaded by the model is stored in `data.zip`.  
-
-
+The dataset that AlphaPharm used in the training, validation, and testing is located at [data](https://osf.io/ck94p).  
 
 
 ### <a name="training"></a>Training
@@ -156,6 +157,33 @@ For example:
 ```bash
 python -u run.py --mode test --searchtimes 1 --test_times 100 --save_path checkpoints --test_path almodel_75000.pt --pri true --task_id 0
 ```
+
+
+### Reproduce the selection process of identifying AA-35
+```bash
+python -u interact.py   --mode test   --save_path checkpoints --test_path almodel_75000.pt   --custom data/data-LD/
+``` 
+
+
+### Use your own data for testing
+
+To applied the trained AlphaPharm on your own data, you should first build the dataset and then run the AlphaPharm program.
+(1) Build the custom dataset.
+```bash
+ python databuild.py --src_path [file_name].xlsx --dest_path [folder to save]  --column [Property name in the excel file]
+```
+
+For example, we take the lidocaine data to build the dataset.
+```bash
+ python databuild.py --src_path data/lidocaine_data.xlsx --dest_path data_test  --column Objective
+```
+
+(2) Run the AlphaPharm program.
+
+```bash
+python -u interact.py   --mode test   --save_path checkpoints --test_path almodel_75000.pt   --custom data_test
+``` 
+
 
 
 
