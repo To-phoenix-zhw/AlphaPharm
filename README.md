@@ -4,32 +4,36 @@
 
 Official PyTorch implementation of paper "AlphaPharm: a reinforcement-active learning framework to streamline lead optimization in drug discovery". 
 
+<div align=center>
+    <img src="data/overview.png" alt="Overview" width=60% style="display: inline;" />
+</div>
+
+
 [Contents](#AlphaPharm)
 
-- [Overview](#overview)
-- [Installation guide](#installation)
-- [Get started with AlphaPharm](#example)
-  - [The testing of AlphaPharm](#obutton)
-  - [The training of AlphaPharm](#otraining)
-  
-- [More information](#more)
-  - [Datasets](#datasets)
-  - [Training](#training)
-  - [Testing](#testing)
-  - [Contact](#contact)
+- [1. Overview](#overview)
+- [2. Installation guide](#installation)
+- [3. Run AlphaPharm with a single command](#example)
+  - [3.1 The testing of AlphaPharm](#obutton)
+  - [3.2 The training of AlphaPharm](#otraining)
+- [4. Reproduce the results](#more)
+  - [4.1 Datasets](#datasets)
+  - [4.2 Training](#training)
+  - [4.3 Testing](#testing)
+  - [4.4 Reproduce the selection process of identifying AA-35](#selection)
+- [5. Running on your own data](#custom)
+- [6. Supplementary data](#SI)
+- [7. Contact](#contact)
 
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>1. Overview
 
-AlphaPharm is a novel reinforcement-active learning framework that systematically and adaptively identifies promising drug candidates. Mimicking the cyclical cognitive process of decision-making via trial and error, AlphaPharm integrates the stages of molecular hypothesis, wet-lab testing, few-shot learning, and policy refinement.
-
-Specifically, AlphaPharm contains two main modules, the property predictor and the policy network. At each decision-making iteration, the property predictor takes the fingerprints of the candidate molecules and estimates their property values. The policy network accepts the molecules, their estimated property values, and previous optimal records as inputs to decide which candidate should be tested next. 
+AlphaPharm is a reinforcement-active learning framework that generates effective plans to progressively identify promising drug candidates in trial and error. Starting with no property information of derivatives, AlphaPharm emulates a medicinal chemist to establish an iterative, progressive process of hypothesizing molecules, learning causality from successes and failures, and fine-tuning the planning strategy to ascertain candidate molecules. Specifically, AlphaPharm formalizes this iterative progression as a Markov decision process, where a policy network learns to measure the molecule diversity and property improvement iteratively. In AlphaPharm, we introduce a causal reward system that encourages both the discovery of the molecule with a new best property and the selection of counterfactual samples. To maximize the returned rewards, AlphaPharm is encouraged to find the optimal compound for a specific property as soon as possible, thus promoting property enhancement and experimental trial minimization.
 
 Thanks to the above design, AlphaPharm significantly outperforms all the current active learning and few-shot learning methods. It should be noted that AlphaPharm astoundingly singled out a drug candidate, AA-35, with the most potent analgesic activity, from a pool of 51 compounds in just six trials. These findings validate proof-of-concept and highlight the promise of AlphaPharm as a powerful AI-driven computational tool for drug discovery.
 
 
-
-### <a name="installation"></a>Installation guide
+### <a name="installation"></a>2. Installation guide
 
 #### Dependency
 
@@ -44,8 +48,7 @@ The code has been implemented in the following environment:
 | DeepChem       | 2.7.1    |
 | py-xgboost-gpu | 1.5.1    |
 
-The code should work with Python >= 3.7. You could change the package version according to your need.
-
+The code should work with Python >= 3.7. You could change the package version according to your needs.
 
 
 #### Install via Conda and Pip
@@ -67,7 +70,7 @@ conda install -c conda-forge py-xgboost-gpu
 
 
 
-## <a name="example"></a>Get started with AlphaPharm
+## <a name="example"></a>3. Get started with AlphaPharm
 
 First, you need to simply accomplish two steps to loading the data.
 
@@ -76,7 +79,7 @@ First, you need to simply accomplish two steps to loading the data.
 
 Then, you can test or train the AlphaPharm model.
 
-### <a name="obutton"></a>The testing of AlphaPharm
+### <a name="obutton"></a>3.1 The testing of AlphaPharm
 As soon as you execute `bash run.sh`, the testing process will be started, performing the molecule identification process for certain properties with the model. You will get the performance at the bottom of a log file with the following formats: 
 
 >********Statistic Performance********
@@ -91,7 +94,7 @@ If you want to test AlphaPharm on the other properties, you can edit the `test.s
 
 
 
-### <a name="otraining"></a>The training of AlphaPharm
+### <a name="otraining"></a>3.2 The training of AlphaPharm
 
 If you want to train your own AlphaPharm from scratch, just change `test` to `train` in the `run.sh` file. Then you will see the training process with the following formats:
 
@@ -108,14 +111,13 @@ If you want to train your own AlphaPharm from scratch, just change `test` to `tr
 
 
 
-## <a name="more"></a>More information
+## <a name="more"></a>4. Reproduce the results
 
-### <a name="datasets"></a>Datasets
+### <a name="datasets"></a>4.1 Datasets
 
 The dataset that AlphaPharm used in the training, validation, and testing is located at [data](https://osf.io/ck94p).  
 
-
-### <a name="training"></a>Training
+### <a name="training"></a>4.2 Training
 
 #### Training from scratch
 
@@ -131,15 +133,11 @@ For example:
 python -u run.py --mode train --save_path ./results/run_train
 ```
 
-
-
 #### Trained model checkpoint
 
 We uploaded the trained model to the `checkpoints` folder.
 
-
-
-### <a name="testing"></a>Testing
+### <a name="testing"></a>4.3 Testing
 
 #### Testing on the dataset
 
@@ -155,14 +153,12 @@ For example:
 python -u run.py --mode test --searchtimes 1 --test_times 100 --save_path checkpoints --test_path almodel_75000.pt --pri true --task_id 0
 ```
 
-
-### Reproduce the selection process of identifying AA-35
+### <a name="selection"></a>4.4 Reproduce the selection process of identifying AA-35
 ```bash
 python -u interact.py   --mode test   --save_path checkpoints --test_path almodel_75000.pt   --custom data/data-LD/
 ``` 
 
-
-### Use your own data for testing
+## <a name="custom"></a> 5. Running on your own data
 
 To applied the trained AlphaPharm on your own data, you should first build the dataset and then run the AlphaPharm program.
 (1) Build the custom dataset.
@@ -181,9 +177,10 @@ For example, we take the lidocaine data to build the dataset.
 python -u interact.py   --mode test   --save_path checkpoints --test_path almodel_75000.pt   --custom data_test
 ``` 
 
+## <a name="SI"></a> 6. Supplementary data
+### `supplementary/` directory
+- `Statistics of the dataset`:  The list of the 1412 properties, which were divided into the training, validation, and test set with the ratio of 8:1:1. This list reports the property name, the property type (e.g., EC50, IC50, Ki, Kd, etc.), and the sample number of the property.
 
-
-
-### <a name="contact"></a>Contact
+### <a name="contact"></a>7. Contact
 
 If you encounter any problems during the setup of environment or the execution of AlphaPharm, do not hesitate to contact [liuxianggen@scu.edu.cn](mailto:liuxianggen@scu.edu.cn) or [hanwenzhang@stu.scu.edu.cn](mailto:hanwenzhang@stu.scu.edu.cn). You could also create an issue under the repository: https://github.com/To-phoenix-zhw/AlphaPharm.
