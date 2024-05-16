@@ -179,8 +179,9 @@ python -u interact.py   --mode test   --save_path checkpoints --test_path almode
 
 ## <a name="SI"></a> 6. Supplementary data
 ### `supplementary/` directory
-- `Statistics of the dataset`:  The list of the 1412 properties, which were divided into the training, validation, and test set with the ratio of 8:1:1. This list reports the property name, the property type (e.g., EC50, IC50, Ki, Kd, etc.), and the sample number of the property.
+- `statistics_of_the_dataset.xlsx`:  The list of the 1412 properties, which were divided into the training, validation, and test set with the ratio of 8:1:1. This list reports the property name, the property type (e.g., EC50, IC50, Ki, Kd, etc.), and the sample number of the property.
+- `lidocaine_data.xlsx`:  The 51 derivatives of lidocaine and the corresponding objective function values.
 
 ### <a name="contact"></a>7. Contact
 
-If you encounter any problems during the setup of environment or the execution of AlphaPharm, do not hesitate to contact [liuxianggen@scu.edu.cn](mailto:liuxianggen@scu.edu.cn) or [hanwenzhang@stu.scu.edu.cn](mailto:hanwenzhang@stu.scu.edu.cn). You could also create an issue under the repository: https://github.com/To-phoenix-zhw/AlphaPharm.
+If you encounter any problems during the setup of the environment or the execution of AlphaPharm, do not hesitate to contact [liuxianggen@scu.edu.cn](mailto:liuxianggen@scu.edu.cn) or [hanwenzhang@stu.scu.edu.cn](mailto:hanwenzhang@stu.scu.edu.cn). You could also create an issue under the repository: https://github.com/To-phoenix-zhw/AlphaPharm.
