@@ -14,8 +14,6 @@ Official PyTorch implementation of paper "AlphaPharm: a reinforcement-active lea
 - [1. Overview](#overview)
 - [2. Installation guide](#installation)
 - [3. Run AlphaPharm with a single command](#example)
-  - [3.1 The testing of AlphaPharm](#obutton)
-  - [3.2 The training of AlphaPharm](#otraining)
 - [4. Reproduce the results](#more)
   - [4.1 Datasets](#datasets)
   - [4.2 Training](#training)
@@ -189,7 +187,7 @@ python -u interact.py   --mode test   --checkpoint_path checkpoints/almodel_7500
 - `Wetlab-1. ALL Compound-CFA.xlsx`:  The CFA data of all the compounds used in our work.
 - `Wetlab-2. AUC.xlsx`:  The AUC data of all the compounds used in our work.
 - `Wetlab-3. Writhing Latency (min).xlsx`:  The in vivo data of the writhing latency.
-...
+- ...
 
 
 ### <a name="contact"></a>7. Contact
