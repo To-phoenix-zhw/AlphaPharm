@@ -89,9 +89,9 @@ If you want to test AlphaPharm on the other properties, you can edit the `run_ex
 
 The dataset that AlphaPharm used in the training, validation, and testing is located at [data](https://osf.io/ck94p). Please download  and move it to the folder `data/dataset` by following steps:
 
-1. Download the dataset archive `dataset.zip` from  [data](https://osf.io/ck94p).
+1. Download the dataset archive `dataset.rar` from  [data](https://osf.io/ck94p).
 
-2. Run the command: `unzip dataset.zip`.
+2. Run the command: `unrar dataset.rar`.
 
 3. Run the command: `mv dataset ./data/dataset`.
 
