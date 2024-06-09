@@ -91,7 +91,12 @@ The dataset that AlphaPharm used in the training, validation, and testing is loc
 
 1. Download the dataset archive `dataset.rar` from  [data](https://osf.io/ck94p).
 
-2. Run the command: `unrar dataset.rar`.
+2. Unzip the dataset by running the command: 
+
+```bash
+sudo apt-get install rar
+rar x dataset.rar
+```
 
 3. Run the command: `mv dataset ./data/dataset`.
 
@@ -118,9 +123,9 @@ Then you will see the training process with the following formats:
 >
 >[2023-10-24 15:30:52,640:: train::INFO] Training model...
 >
->[2023-10-24 15:31:52,644:: train::INFO] [Train] Iter 1 | reward [a floating point number]
+>[2023-10-24 15:31:52,644:: train::INFO] [Train] Iter 20 | reward [a floating point number]
 >
->[2023-10-24 15:32:53,329:: train::INFO] [Train] Iter 2 | reward [a floating point number]
+>[2023-10-24 15:32:53,329:: train::INFO] [Train] Iter 40 | reward [a floating point number]
 >
 >...
 >
