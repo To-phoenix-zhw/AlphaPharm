@@ -123,17 +123,17 @@ python -u run.py --mode train  --checkpoint_path ./results --train_path data/dat
 Then you will see the training process with the following formats:
 
 ```bash
->[2023-10-24 15:30:52,632:: train::INFO] Building model...
->
->[2023-10-24 15:30:52,640:: train::INFO] Training model...
->
->[2023-10-24 15:31:52,644:: train::INFO] [Train] Iter 20 | reward [a floating point number]
->
->[2023-10-24 15:32:53,329:: train::INFO] [Train] Iter 40 | reward [a floating point number]
->
->...
->
->[2023-10-24 15:32:53,329:: train::INFO] [Validation] Iter 100 | reward [a floating point number]
+[2023-10-24 15:30:52,632:: train::INFO] Building model...
+
+[2023-10-24 15:30:52,640:: train::INFO] Training model...
+
+[2023-10-24 15:31:52,644:: train::INFO] [Train] Iter 200 | reward [a floating point number]
+
+[2023-10-24 15:32:53,329:: train::INFO] [Train] Iter 400 | reward [a floating point number]
+
+...
+
+[2023-10-24 15:32:53,329:: train::INFO] [Validation] Iter 5000 | reward [a floating point number]
 
 ```
 
@@ -162,7 +162,7 @@ python -u run.py --searchtimes 1 --mode test  --checkpoint_path checkpoints/almo
 [Output]:
 
 ```bash
->********Statistic Performance********
+********Statistic Performance********
 Task:  molnet__thermosol
 Average success rate: [a floating point number] %
 Average search steps: [a floating point number]
