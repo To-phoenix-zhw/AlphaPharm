@@ -35,11 +35,13 @@ def train(
 ):
     rewards = 0  
     distances = 0  
+    losses    = 0
     rewards_list = [] 
     models_list = [] 
     SOTAs_list = []  
 
     logger.info('Building model...')
+    logscale = 1000
     checkpoint_path = save_path
 
     almodel = ActiveModel(lstmdim).to(device)
@@ -49,13 +51,12 @@ def train(
         rewards = continue_rewards*continue_epoch
         distances = continue_distances*continue_epoch
     
-    aloptimizer = optim.Adam(almodel.parameters())  
+    aloptimizer = optim.Adam(almodel.parameters(), lr=1e-4)  
     almodel.train() 
-    hx = torch.randn(1, lstmdim) 
-    cx = torch.randn(1, lstmdim) 
     
     train_nos = list(range(len(datasets_list)))
-    train_loop = tqdm(range(maxepoch), desc='Training')
+    #train_loop = tqdm(range(maxepoch), desc='Training')
+    train_loop = range(maxepoch)
     previous_val_r= 0
 
     logger.info('Training model...')
@@ -92,6 +93,9 @@ def train(
         # search
         for j in range(searchtimes):
             # print("---Into the search " + str(j+1) +  " (%d experiments)---" % num_iter)
+
+            hx = torch.randn(1, lstmdim) 
+            cx = torch.randn(1, lstmdim) 
             loss, model, re, sota, step,_ = run_al_epoch(
                 X, y, ids,
                 GT_max_point, GT_min_point, 
@@ -118,17 +122,18 @@ def train(
         cur_re = 0
         cnt_re = 0
         cur_dis = 0
+        cur_loss = 0.0
         for id, re in enumerate(reward_list):
             if (re > np.mean(reward_list)) or (math.fabs(re-np.mean(reward_list))<1e-5):  
                 (loss_list[id] / optnum).backward()  
                 cur_re += re
                 cnt_re += 1
                 cur_dis += (math.fabs(SOTA_list[id] - GT_max_point.y.item())/(GT_max_point.y.item() + 1e-5))
+                cur_loss += loss_list[id].item()
 
-        
         # Update parameters every 20 episodes
         if cur_epo % optnum == optnum - 1: 
-            clip_grad_norm_(almodel.parameters(), 2.0)  
+            clip_grad_norm_(almodel.parameters(), 5.0)  
             aloptimizer.step()  
             aloptimizer.zero_grad() 
             almodel.zero_grad()  
@@ -138,8 +143,18 @@ def train(
         rewards_list.append(rewards/(cur_epo+1))
         models_list.append(model_list[np.argmax(reward_list)])
         SOTAs_list.append(SOTA_list[np.argmax(SOTA_list)])
+        losses += cur_loss/cnt_re
 
-        if ((cur_epo+1)>1) and ((cur_epo)%(10*optnum)==0):
+        lognum = 40*optnum
+
+        if ((cur_epo)>0) and ((cur_epo)%lognum==0):
+            if ((cur_epo)<=logscale) : rewards = rewards*(1-optnum*1.0/lognum)
+            logger.info('[Training] Iter %d | reward %.3f |  loss %.3f' % (cur_epo, rewards/lognum, losses/lognum))
+            rewards = 0
+            losses = 0
+
+
+        if ((cur_epo)>0) and ((cur_epo)%(logscale*optnum)==0):
             val_epoch = 100
             val_rewards = validation(almodel,val_datasets_list,logger,device,lstmdim,search_space,searchtimes, num_iter, optnum, val_epoch, gamma, pri, active_flag, epsilon)
 
@@ -150,10 +165,9 @@ def train(
                 previous_val_r=val_rewards
             almodel.train()
  
-
         
-        train_loop.set_description(f'Train Iter [{cur_epo+1}/{maxepoch}]')
-        train_loop.set_postfix(reward = rewards/(cur_epo+1))
+        #train_loop.set_description(f'Train Iter [{cur_epo+1}/{maxepoch}]')
+        #train_loop.set_postfix(reward = rewards/(cur_epo+1))
         # print("*****ENDING THE EPOCH %d TASK %d %s *****" % (cur_epo+1, dataset_obj_idx, task_name)) 
 
     return rewards_list
