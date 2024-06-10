@@ -72,13 +72,17 @@ conda install -c conda-forge py-xgboost-gpu
 
 As soon as you execute `bash run_example.sh`, the testing process will be started, performing the molecule identification process for certain properties with the model. You will get the performance at the bottom of a log file with the following formats: 
 
->********Statistic Performance********
->
->Average success rate: [a percentage]
->
->Average search steps: [an integer]
->
->time cost [a floating point number] s
+```bash
+Task:  molnet__thermosol
+Begin molecule identification process...
+**********Step 0:**********
+Random initialization:  [SMILES of a molecule]
+Human: Conducts experiment and obtains the property value:  [Property value]
+**********Step 1:**********
+Random initialization:  [SMILES of a molecule]
+Human: Conducts experiment and obtains the property value:  [Property value]
+...
+```
 
 If you want to test AlphaPharm on the other properties, you can edit the `run_example.sh`  file by revising the value of the `--task_id` argument. (Domain of this argument: [0, 1, 2 ... 145])
 
@@ -153,14 +157,23 @@ python -u run.py --mode test --searchtimes 1 --test_times [times of testing]  --
 For example:
 
 ```bash
-python -u run.py --searchtimes 1 --mode test  --checkpoint_path checkpoints/almodel_75000.pt  --pri true --task_id 0 --test_path ./data/dataset/testing-set  --num_iter 40
+python -u run.py --searchtimes 1 --mode test  --checkpoint_path checkpoints/almodel.pt  --pri true --task_id 0 --test_path ./data/dataset/testing-set  --num_iter 40
+```
+[Output]:
+
+```bash
+>********Statistic Performance********
+Task:  molnet__thermosol
+Average success rate: [a floating point number] %
+Average search steps: [a floating point number]
+time cost [time] s
 ```
 
 [Time it takes]: The testing process will take several minutes to obtain the performance on a single GPU. More time is required for the CPU setting.
 
 ### <a name="selection"></a>4.4 Reproduce the selection process of identifying AA-35
 ```bash
-python -u interact.py   --mode test   --checkpoint_path checkpoints/almodel_75000.pt   --custom data/data-LD
+python -u interact.py   --mode test   --checkpoint_path checkpoints/almodel.pt   --custom data/data-LD
 ``` 
 
 ## <a name="custom"></a> 5. Running on your own data
@@ -180,7 +193,7 @@ For example, we take the lidocaine data to build the dataset.
 (2) Run the AlphaPharm program.
 
 ```bash
-python -u interact.py   --mode test   --checkpoint_path checkpoints/almodel_75000.pt   --custom data_test
+python -u interact.py   --mode test   --checkpoint_path checkpoints/almodel.pt   --custom data_test
 ``` 
 
 [Time it takes]: The process will take several minutes to obtain the performance on a single GPU.

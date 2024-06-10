@@ -42,7 +42,7 @@ parser.add_option("--continue_epoch", dest="continue_epoch", default=0)
 parser.add_option("--continue_rewards", dest="continue_rewards", default=0)
 parser.add_option("--continue_distances", dest="continue_distances", default=0)
 parser.add_option("--test_times", dest="test_times", default=100)
-parser.add_option("--task_id", dest="task_id", default=0)
+parser.add_option("--task_id", dest="task_id", default=84)
 opts,args = parser.parse_args()
 
 device = str(opts.device)
